@@ -5,11 +5,11 @@ function loadPageConfig(){
 
     refreshFooterHome();
 
-    if($(".home").length>0){
-        $(".home").removeClass("cached");
+    if($(".config").length>0){
+        $(".config").removeClass("cached");
         initializePageConfig();
     }else{
-        mainView.router.reloadPage("ES/home.html");
+        mainView.router.reloadPage("ES/config.html");
     }
 }
 

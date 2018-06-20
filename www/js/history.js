@@ -5,11 +5,11 @@ function loadPageHistory(){
 
     refreshFooterHome();
 
-    if($(".home").length>0){
-        $(".home").removeClass("cached");
+    if($(".history").length>0){
+        $(".history").removeClass("cached");
         initializePageHistory();
     }else{
-        mainView.router.reloadPage("ES/home.html");
+        mainView.router.reloadPage("ES/history.html");
     }
 }
 

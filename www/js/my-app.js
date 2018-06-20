@@ -46,7 +46,7 @@ function masterBack(e) {
     userHistory.pop();
 
     if(userHistory.length===0){
-        myApp.confirm('Querés salir de la aplicación?',"Plenus",
+        myApp.confirm('Querés salir de la aplicación?',"SBB",
             function () {
                 navigator.app.exitApp();
             },
@@ -59,7 +59,7 @@ function masterBack(e) {
         switch (userHistory[userHistory["length"]-1] ) {
 
             case 'index':
-                myApp.confirm('Querés salir de la aplicación?',"Plenus",
+                myApp.confirm('Querés salir de la aplicación?',"SBB",
                     function () {
                         navigator.app.exitApp();
                     },
@@ -88,6 +88,9 @@ function masterBack(e) {
             case 'history':
                 loadPageHistory();
                 break;
+            case 'config':
+                loadPageConfig();
+                break;
             default:
                 break;
         }
@@ -99,12 +102,10 @@ var $ = Framework7.$;
 
 /* Funcion que contiene render de Templates*/
 runTemplates();
-actualizarListaLocales();
 
-var compiledListProductTemplate;
+
 var compiledMyAccountTemplate;
-var compiledListTipoPlace;
-var compiledBusquedaTemplate;
+
 
 
 $$(document).on("pageInit", function (e) {
@@ -158,17 +159,17 @@ $$(document).on("pageInit", function (e) {
         loadPageHome();
     });
 
-    $("#button_myAccount").click(function() {
-        loadPageMyAccount();
+    $("#iconEstadisticas").click(function() {
+    loadPageHistory();
     });
 
-    $("#button_history").click(function() {
-        loadPageHistory();
+    $("#iconConfig").click(function() {
+    loadPageConfig();
     });
 
-    $("#button_config").click(function() {
-        loadPageConfig();
-    });
+    $("#iconMyAccount").click(function () {
+    loadPageMyAccount();
+    })
 
     $("#button_contact").click(function() {
     titleMessaje = null;

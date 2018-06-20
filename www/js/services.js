@@ -3,7 +3,7 @@
 var urlServer="localhost:8085";
 
 var appServices = {
- TySLogin:"http://"+urlServer+"/SBB/SBBLoginManual",
+ SBBLogin:"http://"+urlServer+"/SBB/SBBLoginManual",
  TySRegister:"http://"+urlServer+"/SBB/SBBRegistroManual",
  TySMyAccount:"http://"+urlServer+"/SBB/SBBMyAccount",
  TySImg:"http://"+urlServer+"/contextoPlenus/",

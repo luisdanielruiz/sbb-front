@@ -56,36 +56,6 @@
           </a>
         </li>
           <li>
-              <a id="button_myAccount" href="#" class="item-content item-link close-panel no-animation">
-                  <div class="item-media"><i class="icon-question" aria-hidden="true"></i></div>
-                  <div class="item-inner">
-                      <div class="item-title">
-                          Mi Cuenta
-                      </div>
-                  </div>
-              </a>
-          </li>
-        <li>
-          <a id="button_history" href="#" class="item-content item-link close-panel no-animation">
-            <div class="item-media"><i class="icon-clock" aria-hidden="true"></i></div>
-            <div class="item-inner">
-              <div class="item-title">
-                Historial
-              </div>
-            </div>
-          </a>
-        </li>
-          <li>
-              <a id="button_config" href="#" class="item-content item-link close-panel no-animation">
-                  <div class="item-media"><i class="icon-book-open" aria-hidden="true"></i></div>
-                  <div class="item-inner">
-                      <div class="item-title">
-                          Configuración
-                      </div>
-                  </div>
-              </a>
-          </li>
-          <li>
               <a id="button_contact" href="#" class="item-content item-link close-panel no-animation">
                   <div class="item-media"><i class="icon-envelope" aria-hidden="true"></i></div>
                   <div class="item-inner">
@@ -123,7 +93,7 @@
 <f7-views>
  <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
 <!-- iOS Theme Navbar -->
-<f7-navbar id="navBarIos" style="background-color: white;" v-if="$theme.ios" onclick="hiddenHistory();">
+<f7-navbar id="navBarIos" style="background-color: white;" v-if="$theme.ios">
 
 </f7-navbar>
 
@@ -146,16 +116,16 @@
 </f7-pages>
  <!-- Toolbar has additional "toolbar-bottom" class -->
       <div id="toolBarBottom" class="toolbar toolbar-bottom">
-          <div class="toolbar-inner row">
-              <div id="iconHistory" class="col-33">
-                  <a  href="#" class="icon-clock"></a>
-              </div>
-              <div id="iconEntrenar" class="col-33">
-                  <a  href="#" class="icon-game-controller"></a>
-              </div>
-              <div id="iconMyAccount" class="col-33">
-                  <a  href="#" class="icon-user"></a>
-              </div>
+          <div class="toolbar-inner row iconsFooter" >
+                  <div id="iconConfig" class="col-33">
+                      <a  href="#" class="fa fa-cog" style="font-size: 17px;"><br><span class="textFooter">Configuración</span></a>
+                  </div>
+                  <div id="iconEstadisticas" class="col-33">
+                      <a  href="#" class="fa fa-line-chart" style="font-size: 17px;"><br><span class="textFooter">Estadistícas</span></a>
+                  </div>
+                  <div id="iconMyAccount" class="col-33">
+                      <a  href="#" class="fa fa-user-circle-o" style="font-size: 17px;"><br><span class="textFooter">Mi cuenta</span></a>
+                  </div>
           </div>
       </div>
       </f7-view>

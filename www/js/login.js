@@ -1,6 +1,7 @@
-
-
+/******************** Login ***************************/
 function loadPageLogin(){
+    $('#toolBarBottom').addClass('hideFooter');
+    $('#navBarIos').addClass('hideFooter');
 	$(".page").addClass("cached");
 	
 	
@@ -15,11 +16,6 @@ function loadPageLogin(){
 
 function initializePageLogin(){
 	addActionsLogin();
-    
-    $.get('T/tipoPlaceTemplate.html', function(data){
-            compiledListTipoPlace = Template7.compile(data);
-         });
-    	
 }
 
 
@@ -37,7 +33,6 @@ function addActionsLogin(){
 	$("#recovery")[0].onclick = function enterKey(e) {
 		loadPageRecovery();
 	};
-
 
 	$("#omitir")[0].onclick = function enterKey(e) {
         omitirRegistro();
@@ -57,8 +52,8 @@ function loginAjax(){
 	$('#loading').css('display', 'block');
 	
 		$.ajax({
-          	type: "GET", 
-            url: appServices.TySLogin, 
+          	type: "GET",
+            url: appServices.SBBLogin,
             data: 'email='+dataMail+'&password='+dataPass,
             contentType: "application/json",
           	sync: false, 
@@ -79,23 +74,23 @@ function loginAjax(){
 						blockFavoritos = false;
 						$(".name-user").html("¡Hola "+b.result.name+"!");
                         loadAll();
-						loadListFavoritesProducts();
+
 						loadPageHome();
-						addHeartProducts();
+
 						$('#menu-logIn').css('display','none');
         				$('#menu-logOut').css('display','block');
         				$('#menu-payHistory').css('display','block');
 					}else{
 						console.log("Datos erroneos");
 						
-						myApp.alert('Ingrese su usuario y contraseña nuevamente', "Plenus");
+						myApp.alert('Ingrese su usuario y contraseña nuevamente', "SBB");
 					}
 				}else{				
-					myApp.alert('Ingrese mail y contraseña', "Plenus");
+					myApp.alert('Ingrese mail y contraseña', "SBB");
 				}
 			},error: function (data) {
                 $('#loading').remove();
-                myApp.alert("Problemas en la conexión a internet","Plenus");
+                myApp.alert("Problemas en la conexión a internet","SBB");
             }
 		});
 }
