@@ -1,0 +1,81 @@
+
+<!-- We don't need full layout here, becalocal-individuale this page will be parsed with Ajax-->
+<!-- Top Navbar-->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" data-panel="left" class="open-panel panel-left"> <i class="fa fa-bars" aria-hidden="true"></i></a></div>
+    <div class="center sliding size-logo"><img style="width: 100%;" src="img/logoHeader.png"></div>
+    <div class="right">
+      <!-- Right link contains only icon - additional "icon-only" class-->
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="contact" class="page contact toolbar-fixed navbar-fixed">
+    <!-- Scrollable page content-->
+    <!-- Toolbar has additional "toolbar-bottom" class -->
+    <div class="toolbar toolbar-correc">
+      <div class="toolbar-inner">
+        <div class="left">
+          <a onclick="masterBack();" style="margin-top: auto;" href="#" class="link icon-only color-link">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+          </a>
+        </div>
+        <p id="nameContact">Contáctanos</p>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="content-block content-block-padding">
+        <div class="row">
+          <div class="col-100">
+            <div>
+              <p id="textContact" class="txt-form" style="font-size: 18px">Escribenos sobre cualquier consulta o sugerencia que tengas, estamos para ayudarte!.</p>
+            </div>
+<div class="list-block">
+  <ul>
+    <!-- Text inputs -->
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">ASUNTO</div>
+          <div class="item-input">
+            <input id="asuntoInput" type="text" placeholder="">
+          </div>
+        </div>
+      </div>
+    </li>
+    <!-- Select 
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">E-MAIL</div>
+          <div class="item-input">
+            <input type="email" placeholder="E-mail">
+          </div>
+        </div>
+      </div>
+    </li>-->
+ 
+    <!-- Date -->
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">MENSAJE</div>
+          <div class="item-input">
+            <textarea id="mensajeInput" name="mensaje" rows="10" cols="40" placeholder=""></textarea>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <a id="sendMail" href="#" class="button button-fill button-big button-registry">ENVIAR</a>
+  
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
