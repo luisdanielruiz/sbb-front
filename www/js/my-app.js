@@ -91,6 +91,13 @@ function masterBack(e) {
             case 'config':
                 loadPageConfig();
                 break;
+            case 'velocidad':
+                loadPageVelocidad();
+                break;
+            case 'fuerza':
+                loadPageFuerza();
+                break;
+
             default:
                 break;
         }
@@ -150,6 +157,14 @@ $$(document).on("pageInit", function (e) {
      if (page.name === 'recovery') {
         initializePageRecovery();
     }
+
+    if (page.name === 'velocidad') {
+        initializePageVelocidad();
+    }
+
+    if (page.name === 'fuerza') {
+        initializePageFuerza();
+    }
 });
 
 
@@ -206,7 +221,10 @@ $$(document).on("pageInit", function (e) {
 if(Juser !=null && Juser.result.idUser){
    loadAll();
    loadPageHome();
+
    $(".name-user").html("¡Hola "+Juser.result.name+"!");
 }else{
 	loadPageLogin();
 }
+
+

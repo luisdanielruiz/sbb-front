@@ -751,7 +751,7 @@ letter-spacing:0;
     color: #fff;
     border-color: transparent;
     opacity: 0.79;
-    background: #000;
+    background: #ff0000;
     border-radius: 2px;
     height: 50px;
         margin-left: 24px;
@@ -2758,6 +2758,7 @@ table tr th.width-4 {
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
+    border-radius: 8px;
 }
 .imgChallengue{
     margin-top: 15px;
@@ -2837,4 +2838,86 @@ table tr th.width-4 {
     margin-right: 5px;
     height: auto;
     margin-top: 10px;
+    border-radius: 8px;
+}
+
+
+/*Velocidad*/
+.nameVelocidad{
+    position: relative;
+    right: 35%;
+    font-family: Roboto-Light !important;
+    font-size: 25px !important;
+    color: #aaaaaa;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.imgVelocidad{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    height: 120px;
+}
+.textVelocidad{
+    font-family: Helvetica;
+    font-size: 24px;
+    color: #000;
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 15%;
+}
+
+.challengueVelocidad{
+    background: #ffffff;
+    box-shadow: 0 2px 9px 0 rgba(0,0,0,0.20);
+    width: 95%;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+/*Fuerza*/
+.nameFuerza{
+    position: relative;
+    right: 35%;
+    font-family: Roboto-Light !important;
+    font-size: 25px !important;
+    color: #aaaaaa;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.imgFuerza{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    height: 120px;
+}
+.textFuerza{
+    font-family: Helvetica;
+    font-size: 24px;
+    color: #000;
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 15%;
+}
+
+.challengueFuerza{
+    background: #ffffff;
+    box-shadow: 0 2px 9px 0 rgba(0,0,0,0.20);
+    width: 95%;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
 }

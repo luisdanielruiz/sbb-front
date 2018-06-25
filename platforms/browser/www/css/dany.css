@@ -1014,6 +1014,7 @@ height:22px;
     margin: 7px 0 0 -50px;
     top: 0;
 }
+
 #textContact{
     margin-top: 91px;
     font-family: Roboto-Light;
@@ -1027,7 +1028,7 @@ height:22px;
 
 #sendMail{
         opacity: 0.79;
-    background: #000;
+    background: #ff0000;
     border-radius: 2px;
     height: 50px;
     margin-left: 24px;
@@ -2810,4 +2811,30 @@ table tr th.width-4 {
 .btnConectar{
     margin-top: 20px !important;
     background: #ff0000 !important;
+}
+.textFooter{
+    font-family: Roboto-Regular;
+    font-size: 16px;
+    letter-spacing: -1px;
+    text-align: center;
+}
+.iconsFooter{
+    top: 4px;
+}
+
+#nameHistory{
+    position: absolute;
+    left: 55%;
+    float: left;
+    margin: 7px 0 0 -50px;
+    top: 0;
+}
+.chartHistory{
+    background: #ffffff;
+    box-shadow: 0 2px 9px 0 rgba(0,0,0,0.20);
+    width: -webkit-fill-available;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: auto;
+    margin-top: 10px;
 }

@@ -1,5 +1,4 @@
 /******************** CONTACT ***************************/
-var contactFromView;
 function loadPageContact(){
 
 	$(".page").addClass("cached");
