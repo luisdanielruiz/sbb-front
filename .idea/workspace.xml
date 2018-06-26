@@ -4,35 +4,6 @@
     <list default="true" id="6f5a8a40-47eb-4e64-9106-153a16694afe" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/ES/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/ES/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/ES/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/ES/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/css/dany.css" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/css/dany.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/img/logoHeader.png" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/img/logoHeader.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/conectar.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/conectar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/datasource.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/datasource.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/my-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/my-app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/conectar.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/conectar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/config.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/config.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/fuerza.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/fuerza.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/libre.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/libre.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/myAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/myAccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/recovery.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/recovery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/retoFuerza.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/retoFuerza.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/retoVelocidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/retoVelocidad.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/velocidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/velocidad.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/dany.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/dany.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/img/logoHeader.png" beforeDir="false" afterPath="$PROJECT_DIR$/www/img/logoHeader.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/conectar.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/conectar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/datasource.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/datasource.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/retoVelocidad.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/retoVelocidad.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -123,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="velocidad.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="velocidad.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/ES/velocidad.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -135,14 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fuerza.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/ES/fuerza.html">
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="97" selection-start-line="3" selection-start-column="97" selection-end-line="3" selection-end-column="97" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="363">
+              <caret line="39" column="83" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -205,7 +173,6 @@
         <option value="$PROJECT_DIR$/www/js/home.js" />
         <option value="$PROJECT_DIR$/www/js/conectar.js" />
         <option value="$PROJECT_DIR$/www/js/retoVelocidad.js" />
-        <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/www/js/datasource.js" />
         <option value="$PROJECT_DIR$/www/css/dany.css" />
         <option value="$PROJECT_DIR$/www/ES/history.html" />
@@ -221,6 +188,7 @@
         <option value="$PROJECT_DIR$/www/ES/retoFuerza.html" />
         <option value="$PROJECT_DIR$/www/ES/retoVelocidad.html" />
         <option value="$PROJECT_DIR$/www/ES/velocidad.html" />
+        <option value="$PROJECT_DIR$/config.xml" />
       </list>
     </option>
   </component>
@@ -280,19 +248,22 @@
               <item name="sbb-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="sbb-front" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sbb-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="sbb-front" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="ES" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="icon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sbb-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="sbb-front" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="icon" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sbb-front" type="b2602c69:ProjectViewProjectNode" />
@@ -348,7 +319,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529501717121</updated>
-      <workItem from="1529501718477" duration="39957000" />
+      <workItem from="1529501718477" duration="41179000" />
     </task>
     <task id="LOCAL-00001" summary="Se limpia codigo y se crea navfooter">
       <created>1529531450477</created>
@@ -378,15 +349,35 @@
       <option name="project" value="LOCAL" />
       <updated>1530026014695</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="se modifican headers de vistas">
+      <created>1530041658812</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1530041658812</updated>
+    </task>
+    <task id="LOCAL-00006" summary="se modifican headers de vistas">
+      <created>1530041768262</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1530041768262</updated>
+    </task>
+    <task id="LOCAL-00007" summary="se modifican headers de vistas">
+      <created>1530041961751</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1530041961751</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39957000" />
+    <option name="totallyTimeSpent" value="41179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="23" width="1245" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -437,7 +428,8 @@
     <MESSAGE value="Se integran estadisticas en vista historial" />
     <MESSAGE value="Se crean vistas de retos de fuerza y velocidad" />
     <MESSAGE value="Se crean vista de entrenamiento libre y retos de velocidad y fuerza" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se crean vista de entrenamiento libre y retos de velocidad y fuerza" />
+    <MESSAGE value="se modifican headers de vistas" />
+    <option name="LAST_COMMIT_MESSAGE" value="se modifican headers de vistas" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/www/js/index.js">
@@ -598,13 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/conectar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -756,6 +741,13 @@
           <folding>
             <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="39" column="83" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="83" />
         </state>
       </provider>
     </entry>
