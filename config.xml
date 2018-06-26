@@ -13,8 +13,6 @@
 <!-- Do not auto hide splash on Android -->
 <preference name="SplashScreenDelay" value="3000"/>
 
-    <gap:plugin name="com.megster.cordova.bluetoothserial" />
-   
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <plugin name="BluetoothPlugin" value="org.apache.cordova.plugin.BluetoothPlugin"/>
