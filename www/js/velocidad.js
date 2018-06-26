@@ -26,7 +26,7 @@ function initializePageVelocidad(){
 function addActionsVelocidad(){
 
     $(".challengueVelocidad").click(function() {
-        loadPageConectar();
+        loadPageConectar("retoVelocidad");
     });
 }
 

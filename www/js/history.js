@@ -28,22 +28,7 @@ function addActionsHistory(){
     //addCharts();
     loadStatistics();
 
-
-    var database = firebase.database();
-
 }
 
-
-
-function num(arr,lng) {
-
-    for (var i = 0; i < lng; i++) {
-     if(arr[i] == arr2[i]){
-
-     }
-
-    }
-    return true;
-}
 
 

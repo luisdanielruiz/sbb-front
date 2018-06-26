@@ -24,8 +24,8 @@ function initializePageHome(){
 }
 
 function addActionsHome(){
-    $("#conectarHome")[0].onclick = function enterKey(e) {
-        loadPageConectar();
+    $("#libre")[0].onclick = function enterKey(e) {
+        loadPageConectar("libre");
     };
 
     $("#velocidad")[0].onclick = function enterKey(e) {

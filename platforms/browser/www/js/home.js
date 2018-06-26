@@ -28,27 +28,13 @@ function addActionsHome(){
         loadPageConectar();
     };
 
-    /* buttons nav  footer
-    $("#iconHome")[0].onclick = function enterKey(e) {
-        loadPageHome();
+    $("#velocidad")[0].onclick = function enterKey(e) {
+        loadPageVelocidad();
     };
 
-    $("#iconHeart")[0].onclick = function enterKey(e) {
-        loadPageFavorites();
+    $("#fuerza")[0].onclick = function enterKey(e) {
+        loadPageFuerza();
     };
-
-    $("#iconCar")[0].onclick = function enterKey(e) {
-        loadPageCart();
-    };
-
-    $("#iconUser")[0].onclick = function enterKey(e) {
-        loadPageMyAccount();
-    };
-
-    $("#iconCatalog")[0].onclick = function enterKey(e) {
-        onceCatalog = false;
-        loadPageCatalog(0);
-    };*/
 }
 
 function refreshFooterHome() {

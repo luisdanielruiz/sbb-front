@@ -97,6 +97,15 @@ function masterBack(e) {
             case 'fuerza':
                 loadPageFuerza();
                 break;
+            case 'retoVelocidad':
+                loadPageRetoVelocidad();
+                break;
+            case 'retoFuerza':
+                loadPageRetoFuerza();
+                break;
+            case 'libre':
+                loadPageLibre();
+                break;
 
             default:
                 break;
@@ -158,12 +167,24 @@ $$(document).on("pageInit", function (e) {
         initializePageRecovery();
     }
 
+    if (page.name === 'libre') {
+        initializePageLibre();
+    }
+
     if (page.name === 'velocidad') {
         initializePageVelocidad();
     }
 
     if (page.name === 'fuerza') {
         initializePageFuerza();
+    }
+
+    if (page.name === 'retoVelocidad') {
+        initializePageRetoVelocidad();
+    }
+
+    if (page.name === 'retoFuerza') {
+        initializePageRetoFuerza();
     }
 });
 

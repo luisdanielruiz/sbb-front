@@ -26,8 +26,9 @@ function initializePageFuerza(){
 function addActionsFuerza(){
 
     $(".challengueFuerza").click(function() {
-        loadPageConectar();
+        loadPageConectar("retoFuerza");
     });
+
 }
 
 
