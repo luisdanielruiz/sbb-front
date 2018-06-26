@@ -2960,9 +2960,40 @@ table tr th.width-4 {
     color: black;
     font-size: 50px;
 }
+#timerLabel2 {
+    color: black;
+    font-size: 50px;
+}
 .imgTimer{
     margin-top: 15px;
     width: 70%;
 }
 
 /*Reto Fuerza*/
+.nameRetoFree{
+    position: relative;
+    right: 30%;
+    font-family: Roboto-Light !important;
+    font-size: 25px !important;
+    color: #aaaaaa;
+    letter-spacing: 0;
+    text-align: center;
+}
+.nameRetoFuerza{
+    position: relative;
+    right: 30%;
+    font-family: Roboto-Light !important;
+    font-size: 25px !important;
+    color: #aaaaaa;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.textRetoFuerza{
+    font-family: Helvetica;
+    font-size: 30px;
+    color: #000;
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: 10px;
+}

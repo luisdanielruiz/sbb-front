@@ -103,6 +103,9 @@ function masterBack(e) {
             case 'retoFuerza':
                 loadPageRetoFuerza();
                 break;
+            case 'libre':
+                loadPageLibre();
+                break;
 
             default:
                 break;
@@ -162,6 +165,10 @@ $$(document).on("pageInit", function (e) {
     
      if (page.name === 'recovery') {
         initializePageRecovery();
+    }
+
+    if (page.name === 'libre') {
+        initializePageLibre();
     }
 
     if (page.name === 'velocidad') {

@@ -193,7 +193,7 @@ function loadStatistics(){
 
     ctx3 = $("#myChart3");
     myChart3 = new Chart(ctx3, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
             labels: ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado"],
             datasets: [{
@@ -303,7 +303,18 @@ function stop(){
 function reset(){
     status = 0;
     time = 0;
-    document.getElementById('timerLabel').innerHTML = '00:00:00';
+    try {
+        document.getElementById('timerLabel').innerHTML = '00:00:00';
+    }catch (e) {
+
+    }
+    try {
+        document.getElementById('timerLabel2').innerHTML = '00:00:00';
+    }catch (e) {
+
+    }
+
+
 }
 
 function timer(){
@@ -327,8 +338,17 @@ function timer(){
                 sec = "0" + sec;
             }
 
+            try{
+                document.getElementById('timerLabel').innerHTML = min + ":" + sec + ":" + mSec;
+            }catch (e) {
 
-            document.getElementById('timerLabel').innerHTML = min + ":" + sec + ":" + mSec;
+            }
+
+            try{
+                document.getElementById('timerLabel2').innerHTML = min + ":" + sec + ":" + mSec;
+            }catch (e) {
+
+            }
 
             timer();
 

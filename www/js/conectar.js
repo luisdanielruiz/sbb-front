@@ -1,5 +1,8 @@
 /********************CONECTAR***************************/
 var reto;
+var macAddress = "00:21:13:02:C3:4D"; // 100% confirmed my mac address is correct.
+
+
 function loadPageConectar(str){
     reto = str;
 
@@ -23,7 +26,6 @@ addActionsConectar();
 
 }
 
-
 function addActionsConectar(){
 
     $("#conectarBtn")[0].onclick = function enterKey(e) {
@@ -38,10 +40,14 @@ function addActionsConectar(){
                 case "libre":
                     loadPageLibre();
                     break;
-
             }
+                 // end of app
         });
     };
 
 
+
+
 }
+
+

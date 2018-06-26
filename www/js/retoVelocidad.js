@@ -1,7 +1,6 @@
 /******************** Reto Velocidad ***************************/
 var retoTime1;
-// noinspection JSAnnotator
-// noinspection JSAnnotator
+
 function loadPageRetoVelocidad(retoTime){
 retoTime1= retoTime;
 

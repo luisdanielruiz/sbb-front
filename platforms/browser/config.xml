@@ -11,7 +11,7 @@
         SBB
     </author>
     <content src="index.html" />
-    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <gap:plugin name="com.megster.cordova.bluetoothserial" />
     <splash src="/www/splash.png" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />

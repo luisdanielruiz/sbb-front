@@ -193,7 +193,7 @@ function loadStatistics(){
 
     ctx3 = $("#myChart3");
     myChart3 = new Chart(ctx3, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
             labels: ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado"],
             datasets: [{
@@ -283,3 +283,76 @@ function loadStatistics(){
     });
 
 }
+
+
+var status = 0; //0:stop 1:running
+var time = 0;
+var min;
+var sec;
+var mSec;
+
+function start(){
+    status = 1;
+    timer();
+}
+
+function stop(){
+    status = 0;
+}
+
+function reset(){
+    status = 0;
+    time = 0;
+    try {
+        document.getElementById('timerLabel').innerHTML = '00:00:00';
+    }catch (e) {
+
+    }
+    try {
+        document.getElementById('timerLabel2').innerHTML = '00:00:00';
+    }catch (e) {
+
+    }
+
+
+}
+
+function timer(){
+    if(status == 1){
+        setTimeout(function(){
+            time++;
+
+            min = Math.floor(time/100/60);
+            sec = Math.floor(time/100);
+            mSec = time % 100;
+            stopAut (sec);
+
+            if(min < 10) {
+                min = "0" + min;
+            }
+            if(sec >= 60) {
+                sec = sec % 60;
+
+            }
+            if(sec < 10) {
+                sec = "0" + sec;
+            }
+
+            try{
+                document.getElementById('timerLabel').innerHTML = min + ":" + sec + ":" + mSec;
+            }catch (e) {
+
+            }
+
+            try{
+                document.getElementById('timerLabel2').innerHTML = min + ":" + sec + ":" + mSec;
+            }catch (e) {
+
+            }
+
+            timer();
+
+        }, 10);
+    }
+}
+
