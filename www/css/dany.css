@@ -2997,3 +2997,21 @@ table tr th.width-4 {
     text-align: center;
     margin-top: 10px;
 }
+
+.textRetoFuerza2{
+    font-family: Helvetica;
+    font-size: 30px;
+    color: green;
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: 10px;
+}
+.titleTextRetos{
+    font-family: Helvetica;
+    font-size: 24px;
+    color: red;
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 15%;
+}

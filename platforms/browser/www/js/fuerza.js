@@ -21,7 +21,6 @@ function initializePageFuerza(){
     }
 
     addActionsFuerza();
-    loadFuerzaRetos();
 }
 
 function addActionsFuerza(){

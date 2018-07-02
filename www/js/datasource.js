@@ -1,59 +1,73 @@
 var tySVersion = "tySVersion";
+var listVelRetos = null;
+var listForRetos = null;
 
-function actualizarListaLocales(){
+function loadVelocidadRetos(){
+
+    $('.feedVelocidad').children("div").remove();
+        $.ajax({
+            type: "POST",
+            url: appServices.SBBListarRetos,
+            contentType: "application/json",
+            sync: false,
+            dataType: "JSON",
+            success: function (data) {
+               var parsedData =  JSON.parse(data);
+               if (parsedData.status === "ok") {
+                    listVelRetos = parsedData.result;
+
+                    for (var i = 0; i < listVelRetos.length; i++) {
+
+                        if(listVelRetos[i].tipoChallengue === "Velocidad, "){
+                            //console.log(listVelRetos[i]);
+                            var profileHTML = compiledListVelocidadTemplate(listVelRetos[i]);
+                            $('.feedVelocidad').append(profileHTML);
+                        }
+                    }
+                }
+
+            },error: function (data) {
+                myApp.alert("Problemas en la conexión a internet","SBB");
+            }
+        });
+}
+
+function loadFuerzaRetos(){
+
+    $('.feedFuerza').children("div").remove();
     $.ajax({
-        url: appServices.TySVersionLocal,
-		success:function (data){
-            if (localStorage.getItem(tySVersion) == null || localStorage.getItem(tySVersion) != data) {//miro version
-                tempVersion = data;
-                $.ajax({
-                    url: appServices.TySListarRubrosLocal,
-                    success: function (data3) {
+        type: "POST",
+        url: appServices.SBBListarRetos,
+        contentType: "application/json",
+        sync: false,
+        dataType: "JSON",
+        success: function (data) {
+            var parsedData =  JSON.parse(data);
+            if (parsedData.status === "ok") {
+                listForRetos = parsedData.result;
 
-                        //localStorage.setItem(listRubrosLocal, data3);
-                        //loadListarRubros();
-                    	}, error: function (jqXHR, textStatus, errorThrown) {
-                        //loadListarRubros();
-                   		 }
-                		});
-			   }
+                for (var i = 0; i < listForRetos.length; i++) {
+
+                    if(listForRetos[i].tipoChallengue === "Fuerza, "){
+                        //console.log(listForRetos[i]);
+                        var profileHTML = compiledListFuerzaTemplate(listForRetos[i]);
+                        $('.feedFuerza').append(profileHTML);
+                    }
+                }
             }
 
+        },error: function (data) {
+            myApp.alert("Problemas en la conexión a internet","SBB");
+        }
     });
 }
 
-function loadListarProduct(){
-    var dataProduct =null;
-    dataProduct = JSON.parse(localStorage.listProductLocal);
-    //carga de imagenes en array
-                    for (var i = 0; i < dataProduct.length; i++) {
-                    dataProduct[i].posProduct = i;
-                    if (dataProduct[i].imageProduct == null || dataProduct[i].imageProduct == "") {
-                        dataProduct[i].imageProduct = "img/noImageDirectory.png";
-                        dataProduct[i].arrayImageProduct= ["img/noImage2.png"];
-                    } else {
+function retoVel(){
+    loadPageConectar("retoVelocidad");
+}
 
-                        dataProduct[i].arrayImageProduct = dataProduct[i].imageProduct.split("|");
-
-                        for (var j =0; j< dataProduct[i].arrayImageProduct.length;j++){
-                            dataProduct[i].arrayImageProduct[j] = appServices.TySImg+dataProduct[i].arrayImageProduct[j];
-                        }
-                        if (dataProduct[i].arrayImageProduct[dataProduct[i].arrayImageProduct.length-1] == appServices.TySImg){
-                            dataProduct[i].arrayImageProduct.pop();
-                        }
-
-                        dataProduct[i].imageProduct=dataProduct[i].arrayImageProduct[0];
-                        //dataProduct[i].arrayImageProduct.pop();
-                        //armar variable img directory
-
-                        // armar array imagenes para tomar con for de template
-                        
-                    }
-                    
-                }
-
-    $('#loading').remove();
-    
+function retoFor() {
+    loadPageConectar("retoFuerza");
 }
 
 function loadAll(){
@@ -72,7 +86,8 @@ var ctx4;
 var myChart4;
 
 function removeCharts() {
-    $(".chartHistory").remove()
+
+    $('.chartContainer').children("div").remove();
 }
 
 function addCharts() {
