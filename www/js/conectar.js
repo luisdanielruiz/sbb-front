@@ -28,6 +28,8 @@ addActionsConectar();
 
 function addActionsConectar(){
 
+    connectBtl();
+
     $("#conectarBtn")[0].onclick = function enterKey(e) {
         myApp.alert("conectando...","SBB",function () {
             switch (reto){
@@ -44,10 +46,18 @@ function addActionsConectar(){
                  // end of app
         });
     };
+}
 
-
-
-
+function connectBtl(){
+    window.bluetooth.pair(
+        function() {
+            console.log('Pairing Successful');
+            myApp.alert("Pairing Successful");
+        },
+        function(err) {
+            console.log('There was an error Pairing to a device'+ JSON.stringify(err));
+            myApp.alert("There was an error Pairing to a device"+ JSON.stringify(err));
+        }, macAddress);
 }
 
 

@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f5a8a40-47eb-4e64-9106-153a16694afe" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/www/T/fuerzaTemplate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/T/velocidadTemplate.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/fuerza.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/fuerza.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/retoFuerza.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/retoFuerza.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/ES/velocidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/ES/velocidad.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/dany.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/dany.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/conectar.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/conectar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/datasource.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/datasource.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/fuerza.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/fuerza.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/history.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/services.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/templates.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/templates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/velocidad.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/velocidad.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,95 +21,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="datasource.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/datasource.js">
+      <file leaf-file-name="bluetooth.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/js/bluetooth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="89" column="22" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="22" />
+            <state relative-caret-position="3272">
+              <caret line="408" column="13" selection-start-line="408" selection-start-column="4" selection-end-line="408" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="history.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/history.js">
+      <file leaf-file-name="conectar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/conectar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            <state relative-caret-position="597">
+              <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="history.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/ES/history.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="33" column="83" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="33" selection-end-column="83" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="velocidad.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/velocidad.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="23" column="4" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fuerza.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/fuerza.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="retoFuerza.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/ES/retoFuerza.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fuerzaTemplate.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/T/fuerzaTemplate.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dany.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/css/dany.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-105">
-              <caret line="2921" selection-start-line="2921" selection-end-line="2930" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/services.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/js/register.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+            <state relative-caret-position="265">
+              <caret line="150" column="27" selection-start-line="150" selection-start-column="27" selection-end-line="150" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -161,7 +86,6 @@
         <option value="$PROJECT_DIR$/www/js/retoFuerza.js" />
         <option value="$PROJECT_DIR$/www/js/libre.js" />
         <option value="$PROJECT_DIR$/www/js/my-app.js" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/home.js" />
         <option value="$PROJECT_DIR$/www/js/retoVelocidad.js" />
         <option value="$PROJECT_DIR$/www/ES/home.html" />
@@ -173,22 +97,23 @@
         <option value="$PROJECT_DIR$/www/ES/recovery.html" />
         <option value="$PROJECT_DIR$/www/ES/register.html" />
         <option value="$PROJECT_DIR$/www/ES/retoVelocidad.html" />
-        <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/www/ES/velocidad.html" />
         <option value="$PROJECT_DIR$/www/js/velocidad.js" />
         <option value="$PROJECT_DIR$/www/js/templates.js" />
         <option value="$PROJECT_DIR$/www/ES/fuerza.html" />
         <option value="$PROJECT_DIR$/www/js/fuerza.js" />
-        <option value="$PROJECT_DIR$/www/js/conectar.js" />
         <option value="$PROJECT_DIR$/www/T/velocidadTemplate.html" />
         <option value="$PROJECT_DIR$/www/css/dany.css" />
         <option value="$PROJECT_DIR$/www/ES/retoFuerza.html" />
         <option value="$PROJECT_DIR$/www/T/fuerzaTemplate.html" />
         <option value="$PROJECT_DIR$/www/js/history.js" />
-        <option value="$PROJECT_DIR$/www/js/datasource.js" />
         <option value="$PROJECT_DIR$/www/ES/history.html" />
-        <option value="$PROJECT_DIR$/www/js/services.js" />
         <option value="$PROJECT_DIR$/www/js/register.js" />
+        <option value="$PROJECT_DIR$/www/js/services.js" />
+        <option value="$PROJECT_DIR$/www/js/datasource.js" />
+        <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www/js/conectar.js" />
       </list>
     </option>
   </component>
@@ -204,7 +129,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="35" />
     <option name="y" value="23" />
     <option name="width" value="1245" />
@@ -238,23 +163,6 @@
             <path>
               <item name="sbb-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="sbb-front" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sbb-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sbb-front" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sbb-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sbb-front" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sbb-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sbb-front" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="T" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -306,7 +214,10 @@
       <updated>1529501717121</updated>
       <workItem from="1529501718477" duration="44038000" />
       <workItem from="1530409641285" duration="401000" />
-      <workItem from="1530493743478" duration="8065000" />
+      <workItem from="1530493743478" duration="9296000" />
+      <workItem from="1531325725611" duration="3139000" />
+      <workItem from="1531506778757" duration="1925000" />
+      <workItem from="1531775643053" duration="2067000" />
     </task>
     <task id="LOCAL-00001" summary="Se limpia codigo y se crea navfooter">
       <created>1529531450477</created>
@@ -364,22 +275,28 @@
       <option name="project" value="LOCAL" />
       <updated>1530042948885</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="se modifican headers de vistas y se agregan vistas dinamicas con llamadas a AJAX">
+      <created>1530565345687</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1530565345688</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52504000" />
+    <option name="totallyTimeSpent" value="60866000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="35" y="23" width="1245" height="777" extended-state="0" />
-    <editor active="true" />
+    <frame x="39" y="23" width="1241" height="777" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17377049" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32876712" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -405,9 +322,17 @@
     <MESSAGE value="Se crean vistas de retos de fuerza y velocidad" />
     <MESSAGE value="Se crean vista de entrenamiento libre y retos de velocidad y fuerza" />
     <MESSAGE value="se modifican headers de vistas" />
-    <option name="LAST_COMMIT_MESSAGE" value="se modifican headers de vistas" />
+    <MESSAGE value="se modifican headers de vistas y se agregan vistas dinamicas con llamadas a AJAX" />
+    <option name="LAST_COMMIT_MESSAGE" value="se modifican headers de vistas y se agregan vistas dinamicas con llamadas a AJAX" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/www/js/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -433,10 +358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2175">
           <caret line="145" column="50" selection-start-line="145" selection-start-column="50" selection-end-line="145" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#f7-navbar#0;n#f7-view#0;n#f7-views#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#f7-navbar#1;n#f7-view#0;n#f7-views#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -465,10 +386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2175">
           <caret line="145" column="50" lean-forward="true" selection-start-line="145" selection-start-column="50" selection-end-line="145" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#f7-navbar#0;n#f7-view#0;n#f7-views#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#f7-navbar#1;n#f7-view#0;n#f7-views#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -518,13 +435,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/stopwatch.js" />
-    <entry file="file://$PROJECT_DIR$/www/js/retoFuerza.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/libre.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -602,33 +512,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="145" column="50" selection-start-line="145" selection-start-column="50" selection-end-line="145" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#f7-navbar#0;n#f7-view#0;n#f7-views#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#f7-navbar#1;n#f7-view#0;n#f7-views#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/myAccount.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
           <caret line="92" column="9" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/T/myAccountTemplate.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/www/ES/retoVelocidad.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -655,13 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/conectar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="33" column="35" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -693,65 +575,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/T/fuerzaTemplate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/velocidad.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="345">
           <caret line="23" column="4" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/history.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/datasource.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="89" column="22" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/ES/history.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="33" column="83" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="33" selection-end-column="83" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="495">
+          <caret line="33" column="83" selection-start-line="30" selection-start-column="20" selection-end-line="33" selection-end-column="83" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/dany.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
+        <state relative-caret-position="43815">
           <caret line="2921" selection-start-line="2921" selection-end-line="2930" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
+        <state relative-caret-position="15">
           <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/T/fuerzaTemplate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/history.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/retoFuerza.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/datasource.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="84" selection-start-line="23" selection-start-column="84" selection-end-line="23" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="150" column="27" selection-start-line="150" selection-start-column="27" selection-end-line="150" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-202">
+          <caret line="15282" column="12" selection-start-line="15282" selection-start-column="12" selection-end-line="15282" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/conectar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/bluetooth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3272">
+          <caret line="408" column="13" selection-start-line="408" selection-start-column="4" selection-end-line="408" selection-end-column="13" />
         </state>
       </provider>
     </entry>
