@@ -1,5 +1,5 @@
-//var urlServer="35.239.34.187";
-var urlServer="localhost:8085";
+var urlServer="35.239.34.187";
+//var urlServer="localhost:8085";
 
 var appServices = {
  SBBListarRetos:"http://"+urlServer+"/SBB/SBBListarChallenges",
