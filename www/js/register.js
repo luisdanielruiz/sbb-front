@@ -72,7 +72,7 @@ function registerAjax(){
 				
 				$.ajax({
 						type: "GET", 
-						url: appServices.TySRegister, 
+						url: appServices.SBBRegister, 
 						data:datosRegister,
 						contentType: "application/json",
 						sync: false, 
@@ -90,7 +90,7 @@ function registerAjax(){
 									console.log(dataEmail);
 									$.ajax({
 										type: "GET", 
-										url: appServices.TySConfirmarMail, 
+										url: appServices.SBBConfirmarMail, 
 										data:'mail='+dataEmail,
 										contentType: "application/json",
 										sync: false, 

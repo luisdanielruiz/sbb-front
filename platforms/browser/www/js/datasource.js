@@ -1,59 +1,73 @@
 var tySVersion = "tySVersion";
+var listVelRetos = null;
+var listForRetos = null;
 
-function actualizarListaLocales(){
+function loadVelocidadRetos(){
+
+    $('.feedVelocidad').children("div").remove();
+        $.ajax({
+            type: "POST",
+            url: appServices.SBBListarRetos,
+            contentType: "application/json",
+            sync: false,
+            dataType: "JSON",
+            success: function (data) {
+               var parsedData =  JSON.parse(data);
+               if (parsedData.status === "ok") {
+                    listVelRetos = parsedData.result;
+
+                    for (var i = 0; i < listVelRetos.length; i++) {
+
+                        if(listVelRetos[i].tipoChallengue === "Velocidad"){
+                            //console.log(listVelRetos[i]);
+                            var profileHTML = compiledListVelocidadTemplate(listVelRetos[i]);
+                            $('.feedVelocidad').append(profileHTML);
+                        }
+                    }
+                }
+
+            },error: function (data) {
+                myApp.alert("Problemas en la conexión a internet","SBB");
+            }
+        });
+}
+
+function loadFuerzaRetos(){
+
+    $('.feedFuerza').children("div").remove();
     $.ajax({
-        url: appServices.TySVersionLocal,
-		success:function (data){
-            if (localStorage.getItem(tySVersion) == null || localStorage.getItem(tySVersion) != data) {//miro version
-                tempVersion = data;
-                $.ajax({
-                    url: appServices.TySListarRubrosLocal,
-                    success: function (data3) {
+        type: "POST",
+        url: appServices.SBBListarRetos,
+        contentType: "application/json",
+        sync: false,
+        dataType: "JSON",
+        success: function (data) {
+            var parsedData =  JSON.parse(data);
+            if (parsedData.status === "ok") {
+                listForRetos = parsedData.result;
 
-                        //localStorage.setItem(listRubrosLocal, data3);
-                        //loadListarRubros();
-                    	}, error: function (jqXHR, textStatus, errorThrown) {
-                        //loadListarRubros();
-                   		 }
-                		});
-			   }
+                for (var i = 0; i < listForRetos.length; i++) {
+
+                    if(listForRetos[i].tipoChallengue === "Fuerza"){
+                        //console.log(listForRetos[i]);
+                        var profileHTML = compiledListFuerzaTemplate(listForRetos[i]);
+                        $('.feedFuerza').append(profileHTML);
+                    }
+                }
             }
 
+        },error: function (data) {
+            myApp.alert("Problemas en la conexión a internet","SBB");
+        }
     });
 }
 
-function loadListarProduct(){
-    var dataProduct =null;
-    dataProduct = JSON.parse(localStorage.listProductLocal);
-    //carga de imagenes en array
-                    for (var i = 0; i < dataProduct.length; i++) {
-                    dataProduct[i].posProduct = i;
-                    if (dataProduct[i].imageProduct == null || dataProduct[i].imageProduct == "") {
-                        dataProduct[i].imageProduct = "img/noImageDirectory.png";
-                        dataProduct[i].arrayImageProduct= ["img/noImage2.png"];
-                    } else {
+function retoVel(){
+    loadPageConectar("retoVelocidad");
+}
 
-                        dataProduct[i].arrayImageProduct = dataProduct[i].imageProduct.split("|");
-
-                        for (var j =0; j< dataProduct[i].arrayImageProduct.length;j++){
-                            dataProduct[i].arrayImageProduct[j] = appServices.TySImg+dataProduct[i].arrayImageProduct[j];
-                        }
-                        if (dataProduct[i].arrayImageProduct[dataProduct[i].arrayImageProduct.length-1] == appServices.TySImg){
-                            dataProduct[i].arrayImageProduct.pop();
-                        }
-
-                        dataProduct[i].imageProduct=dataProduct[i].arrayImageProduct[0];
-                        //dataProduct[i].arrayImageProduct.pop();
-                        //armar variable img directory
-
-                        // armar array imagenes para tomar con for de template
-                        
-                    }
-                    
-                }
-
-    $('#loading').remove();
-    
+function retoFor() {
+    loadPageConectar("retoFuerza");
 }
 
 function loadAll(){
@@ -72,7 +86,8 @@ var ctx4;
 var myChart4;
 
 function removeCharts() {
-    $(".chartHistory").remove()
+
+    $('.chartContainer').children("div").remove();
 }
 
 function addCharts() {
@@ -88,10 +103,6 @@ function addCharts() {
         '                        <canvas id="myChart3"></canvas>\n' +
         '                    </div>') ;
 
-    $('#chartContainer').append('<div class="chartHistory">\n' +
-        '                        <canvas id="myChart4"></canvas>\n' +
-        '                    </div>') ;
-
     loadStatistics();
 
 }
@@ -104,10 +115,10 @@ function loadStatistics(){
     myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ["Principiante", "Amateur", "Profesional"],
             datasets: [{
                 label: 'Media de Fuerza',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [12, 19, 3],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -149,25 +160,16 @@ function loadStatistics(){
     myChart2 = new Chart(ctx2, {
         type: 'line',
         data: {
-            labels: ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado"],
+            labels: ["Principiante", "Amateur", "Profesional"],
             datasets: [{
-                label: 'Velocidad media de golpes por dia M/seg',
-                data: [280, 300, 320, 290, 310, 300],
+                label: 'Media de Velocidad',
+                data: [180, 300, 120],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+
+                    'rgba(153, 102, 255, 0.2)'
                 ],
                 borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(153, 102, 255, 1)'
                 ],
                 borderWidth: 1
             }]
@@ -195,10 +197,10 @@ function loadStatistics(){
     myChart3 = new Chart(ctx3, {
         type: 'doughnut',
         data: {
-            labels: ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado"],
+            labels: ["Principiante", "Amateur", "Profesional"],
             datasets: [{
-                label: 'Cantidad de golpes por dia',
-                data: [260, 290, 260, 300, 300, 250],
+                label: 'Cantidad de golpes',
+                data: [260, 290, 260],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -224,51 +226,6 @@ function loadStatistics(){
                     ticks: {
                         beginAtZero:true,
                         max:800
-                    }
-                }]
-            },layout: {
-                padding: {
-                    left: 0,
-                    right: 0,
-                    top: 5,
-                    bottom: 10
-                }
-            }
-        }
-    });
-
-    ctx4 = $("#myChart4");
-    myChart4 = new Chart(ctx4, {
-        type: 'radar',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
                     }
                 }]
             },layout: {
@@ -356,3 +313,185 @@ function timer(){
     }
 }
 
+function loadStatistics2(){
+
+    ctx = $("#myChart");
+    myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Principiante", "Amateur", "Profesional"],
+            datasets: [{
+                label: 'Media de Fuerza',
+                data: [12, 19, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            },layout: {
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 5,
+                    bottom: 10
+                }
+            }
+        }
+    });
+
+    ctx2 = $("#myChart2");
+    myChart2 = new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: ["Principiante", "Amateur", "Profesional"],
+            datasets: [{
+                label: 'Media de Velocidad',
+                data: [280, 300, 320],
+                backgroundColor: [
+
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        max: 500
+                    }
+                }]
+            },layout: {
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 5,
+                    bottom: 10
+                }
+            }
+        }
+    });
+
+    ctx3 = $("#myChart3");
+    myChart3 = new Chart(ctx3, {
+        type: 'doughnut',
+        data: {
+            labels: ["Principiante", "Amateur", "Profesional"],
+            datasets: [{
+                label: 'Cantidad de golpes',
+                data: [260, 290, 260],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        max:800
+                    }
+                }]
+            },layout: {
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 5,
+                    bottom: 10
+                }
+            }
+        }
+    });
+
+    ctx4 = $("#myChart4");
+    myChart4 = new Chart(ctx4, {
+        type: 'radar',
+        data: {
+            labels: ["Principiante", "Amateur", "Profesional"],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 13],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            },layout: {
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 5,
+                    bottom: 10
+                }
+            }
+        }
+    });
+
+}

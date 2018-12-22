@@ -19,7 +19,6 @@ function initializePageRegister(){
     if(userHistory[userHistory.length-1] != $(".page:not(.cached)").attr("data-page")){
         userHistory.push($(".page:not(.cached)").attr("data-page"));
     }
-    dataselectR();
 	addActionsRegister();
 	
 }
@@ -31,7 +30,7 @@ function addActionsRegister(){
 		if($('#legal').is(":checked")){
             registerAjax();
 		}else{
-			myApp.alert('debes aceptar los términos y condiciones para registrarte', "Plenus");
+			myApp.alert('debes aceptar los términos y condiciones para registrarte', "SBB");
 		}
 
 	};
@@ -40,60 +39,31 @@ function addActionsRegister(){
        loadPageLogin();
     });
 
-    $$('select').on('change', function () {
-        setTimeout(function(){ 
-            $('.icon-back').click();
-        }, 100);
-
-    });
-
-    $('#inputLocalidad').on('change', function() {
-    	var a = $('#inputLocalidad').val();
-    	var res = a.split("|");	
-       $('#inputCP').val(res[1]);
-    });
-
 }
 
 
 function registerAjax(){
+    var datosRegister;
+    var dataName = $("#inputName").val();
+    var dataSurname = $("#inputSurname").val();
+    var dataEmail = $("#inputEmail").val();
+    var dataphone = "123456";
+    var dataPass1 = $("#inputPassword1").val();
+    var dataPass2 = $("#inputPassword2").val();
 	try{
-		
-		var datosRegister;
-		var dataName = $("#inputName").val();
-		var dataSurname = $("#inputSurname").val();
-		var dataEmail = $("#inputEmail").val();
-		var dataPhone = $("#inputPhone").val();
-		var dataDNI = $("#inputDNI").val();
-		var dataCUIL = $("#inputCUIL").val();
-		var dataProvincia = $('.provincia .item-after').text();
-		var temp1 = $('#inputLocalidad').val();
-		var temp2 = temp1.split("|");
-		var dataLocalidad = temp2[0];
-		var dataAddress = $("#inputAddress").val();
-		var dataCP = $('#inputCP').val();
-		var dataCountry = $("#inputCountry").val();
-		var dataPass1 = $("#inputPassword1").val();	
-		var dataPass2 = $("#inputPassword2").val();
-		
 		if((dataName===null||dataName==="")||
 			(dataSurname===null||dataSurname==="")||
-			(dataEmail===null||dataEmail==="")||
-			(dataPhone===null||dataPhone==="")||
-			(dataDNI===null||dataDNI==="")||
-			(dataCUIL===null||dataCUIL==="")||
-			(dataAddress===null||dataAddress==="")||
-			(dataCountry===null||dataCountry==="")){
-			myApp.alert('Error en los campos ingresados', "Plenus");		
+			(dataEmail===null||dataEmail==="")){
+			myApp.alert('Error en los campos ingresados', "SBB");
 			console.log('Error en los campos ingresados');
 		}else if(!validateEmail(dataEmail)) {
-                myApp.alert('Por favor ingrese un email válido', "Plenus");
+                myApp.alert('Por favor ingrese un email válido', "SBB");
             }
         else if(!(dataPass1===dataPass2)) {
-                myApp.alert('Las contraseñas no coinciden', "Plenus");
+                myApp.alert('Las contraseñas no coinciden', "SBB");
             }
             if(validateEmail(dataEmail) && dataPass1===dataPass2){
-					datosRegister='name='+dataName+'&surname='+dataSurname+'&email='+dataEmail+'&phone='+dataPhone+'&dni='+dataDNI+'&cuil='+dataCUIL+'&address='+dataAddress+'&country='+dataCountry+'&postalCode='+dataCP+'&password='+dataPass1+'&state='+dataProvincia+'&city='+dataLocalidad;
+					datosRegister='name='+dataName+'&surname='+dataSurname+'&email='+dataEmail+'&password='+dataPass1+'&phone='+dataphone;
 					console.log(datosRegister);
 				}
 				
@@ -133,7 +103,7 @@ function registerAjax(){
 										}
 									});		
 									
-									myApp.alert('Registro exitoso!', "Plenus");
+									myApp.alert('Registro exitoso!', "SBB");
 									loadPageLogin();
 									inputName.value="";
 									inputSurname.value="";
@@ -152,7 +122,7 @@ function registerAjax(){
 								}else{
 									console.log("Datos erroneos");
 									
-									myApp.alert(b.stacktrace, "Plenus");
+									myApp.alert(b.stacktrace, "SBB");
 									
 								}
 								
@@ -170,7 +140,7 @@ function registerAjax(){
 
 	}catch(err){
 		$('#loading').css('display', 'none');
-		myApp.alert('Error al procesar el registro. Si el problema persisite contactese a contacto@plenus.com', "Plenus");
+		myApp.alert('Error al procesar el registro. Si el problema persisite contactese a info@smartboxingbag.info', "SBB");
 	}
 	
 }
@@ -178,32 +148,6 @@ function registerAjax(){
 function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
-}
-
-function dataselectR(){
-    //localidad = JSON.parse(localStorage.listLocalidad);
-    if(flagOnceSelect==false){
-        $('.changeAddressR').empty();    
-        $('.changeAddressR').append('<div style="margin:0px; width: 100%;"><div class="card-header" style="padding:0px;">Provincia<a style="width: 100%;" class="item-link smart-select smart-select-init provincia" data-searchbar="true" data-searchbar-placeholder="Buscar Provincia"><select name="provinceName" id="inputProvincia" onchange="loadLocationR();"><option value="">Seleccionar</option></select><div class="item-content"><div class="item-inner" style="width: 100%;"><div class="item-title"></div><div class="item-after">Seleccionar</div></div></div></a></div></div>');
-        for(var i=0;i<provincias.length;i++){
-                $('#inputProvincia').append('<option value="'+provincias[i].id+'">'+provincias[i].nombre+'</option>');    
-        }
-        $('.changeAddressR').append('<div style="margin:0px; width: 100%;"><div class="card-header" style="padding:0px;">Localidad<a style="width: 100%;" class="item-link smart-select smart-select-init localidad" data-searchbar="true" data-searchbar-placeholder="Buscar Localidad"><select name="locationName" id="inputLocalidad"><option value="">Seleccionar</option></select><div class="item-content"><div class="item-inner" style="width: 100%;"><div class="item-title"></div><div class="item-after">Seleccionar</div></div></div></a></div></div>');
-        flagOnceSelect=true;
-    }
-}
-
-function loadLocationR(){
-    var idProvincia = parseInt($('#inputProvincia').val());
-    $('#inputLocalidad').empty();
-    $('#inputLocalidad').append('<option value="" class="defaultLocation">Seleccionar</option>');
-    //$('.localidad .item-after').empty();
-    //$('.localidad .item-after').append('<div class="preloader preloader-red"></div>');
-    for(var i=0;i<localidad.length;i++){
-        if(localidad[i].provincia_id==idProvincia && localidad[i].nombre!=""){
-          $('#inputLocalidad').append('<option value="'+localidad[i].nombre+'|'+localidad[i].codigopostal+'">'+localidad[i].nombre+' ('+localidad[i].codigopostal+')</option>');  
-        }        
-    }    
 }
 
 

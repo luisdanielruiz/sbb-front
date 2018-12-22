@@ -21,6 +21,7 @@ function initializePageVelocidad(){
     }
 
     addActionsVelocidad();
+    loadVelocidadRetos();
 }
 
 function addActionsVelocidad(){

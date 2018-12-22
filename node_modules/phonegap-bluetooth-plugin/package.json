@@ -1,0 +1,44 @@
+{
+  "_from": "git+https://github.com/tanelih/PhoneGap-bluetooth-plugin.git",
+  "_id": "phonegap-bluetooth-plugin@0.9.1",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/phonegap-bluetooth-plugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/tanelih/PhoneGap-bluetooth-plugin.git",
+    "rawSpec": "https://github.com/tanelih/PhoneGap-bluetooth-plugin.git",
+    "saveSpec": "git+https://github.com/tanelih/PhoneGap-bluetooth-plugin.git",
+    "fetchSpec": "https://github.com/tanelih/PhoneGap-bluetooth-plugin.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/tanelih/PhoneGap-bluetooth-plugin.git#b63bb9e287d8a9c65c626371fad75009ccf56ae8",
+  "_spec": "https://github.com/tanelih/PhoneGap-bluetooth-plugin.git",
+  "_where": "/Users/daniel/sbb-front",
+  "author": {
+    "name": "tanelih"
+  },
+  "bugs": {
+    "url": "https://github.com/tanelih/phonegap-bluetooth-plugin/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Simple access to Android Bluetooth API for PhoneGap.",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-jsdoc": "^0.5.4"
+  },
+  "homepage": "https://github.com/tanelih/phonegap-bluetooth-plugin",
+  "license": "MIT",
+  "name": "phonegap-bluetooth-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanelih/phonegap-bluetooth-plugin.git"
+  },
+  "version": "0.9.1"
+}

@@ -47,7 +47,7 @@ function sendMail() {
 		console.log(datos);
 		$.ajax({	
 			type: "GET",
-			url: appServices.TySContacto,
+			url: appServices.SBBContacto,
 			data:datos,
 			contentType: "application/json",
 			sync: false,
