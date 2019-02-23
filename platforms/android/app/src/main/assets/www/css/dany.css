@@ -227,7 +227,7 @@ text-align:center;
 }
 
 #homeName{
-        position: absolute;
+    position: absolute;
     left: 50%;
     float: left;
     margin: 0 0 0 -22px;
@@ -302,7 +302,7 @@ height: 262px !important;
 #markerPopup{
 font-size:22px; 
 margin-right: 10px;
-color: #ef4e23;
+color: #ff0000;
 }
 
 #popupMapNamePlace{
@@ -334,13 +334,13 @@ margin-bottom: 10px;
 }
 
 .detalleColorLinkPopup{
-color:#ef4e23 !important;
+color:#ff0000 !important;
 }
 
 #heartPopup{
     position: absolute;
     right: 19px;
-    color: #ef4e23;
+    color: #ff0000;
     width: 20px;
     height: 16px;
     font-size: 18px;
@@ -536,7 +536,7 @@ text-align:left;
 }
 
 #btnHeartFavorites{
-      color: #ef4e23;
+      color: #ff0000;
     width: 18px;
     height: 15px;
     font-size: 25px;
@@ -650,12 +650,12 @@ margin-left: 8px;
 }
 
 #btnHeartIndividual{
-    color: #ef4e23;
+    color: #ff0000;
 }
 
 #catalogoBtn{
 opacity:0.79;
-background:#ef4e23;
+background:#ff0000;
 border-radius:2px;
 height:50px;
 margin-bottom: 40px;
@@ -688,7 +688,7 @@ line-height:25px;
 #webPlaceIndividual{
     font-family:Roboto-Light;
     font-size:15px;
-    color:#ef4e23;
+    color:#ff0000;
     letter-spacing:0;
     line-height:25px;
     
@@ -696,14 +696,14 @@ line-height:25px;
 #fbPlaceIndividual{
     font-family:Roboto-Light;
     font-size:15px;
-    color:#ef4e23;
+    color:#ff0000;
     letter-spacing:0;
     line-height:25px;
 }
 #instagramPlaceIndividual{
     font-family:Roboto-Light;
     font-size:15px;
-    color:#ef4e23;
+    color:#ff0000;
     letter-spacing:0;
     line-height:25px;
 }
@@ -783,7 +783,7 @@ letter-spacing:0;
     margin-bottom: 15px;
     color: #fff;
     border-color: #fff;
-    background: #ef4e23;
+    background: #ff0000;
     border-radius: 2px;
     height: 50px;
         margin-left: 24px;
@@ -798,7 +798,7 @@ letter-spacing:0;
     color: #fff;
     border-color: transparent;
     opacity: 0.79;
-    background: #ef4e23;
+    background: #ff0000;
     border-radius: 2px;
     height: 50px;
     margin-top: 10px;
@@ -855,7 +855,7 @@ letter-spacing:0;
 .register #goBackRegister{
 	font-family:Roboto-LightItalic;
 	font-size:17px;
-	color:#ef4e23;
+	color:#ff0000;
 	text-align:center;
 }
 .register .page-content{
@@ -919,7 +919,7 @@ letter-spacing:0;
 }
 .myAccount #modificarBtn{
     opacity: 0.79;
-    background: #ef4e23;
+    background: #ff0000;
     border-radius: 2px;
     height: 50px;
     margin-left: 24px;
@@ -1104,7 +1104,7 @@ margin-left: 23px;
 }
 #filtar{
 opacity:0.79;
-background:#ef4e23;
+background: #ff0000;
 border-radius:2px;
 width:328px;
 height:50px;
@@ -1163,7 +1163,7 @@ text-align:center;
 }
 
 #cerrar{
-color: #ef4e23 !important;
+color: #ff0000 !important;
 width: 11px;
 height: 11px;
 }
@@ -1290,7 +1290,7 @@ font-size: 22px;
 }
 
 .myclusterA {
-    border: 2px solid #ef4e23;
+    border: 2px solid #ff0000;
     min-width: 40px;
     background-color: rgba(255, 254, 254, 0.8);
     text-align: center;
@@ -1315,7 +1315,7 @@ font-size: 22px;
 }
 
 .leaflet-marker-icon.leaflet-interactive, .leaflet-image-layer.leaflet-interactive, .leaflet-pane > svg path.leaflet-interactive{
-    color: #ef4e23 !important;
+    color: #ff0000 !important;
 }
 
 /* Cards */
@@ -1811,7 +1811,7 @@ td, th {
 .picker-calendar-day.picker-calendar-day-has-events span:after{
     width: 5px;
     height: 5px;
-    background: #ef4e23;
+    background: #ff0000;
 }
 /******* Catalogo *******/
 .data-catalog-article{
@@ -1886,7 +1886,7 @@ td, th {
 .linkProduct{
     font-family:Roboto-Light;
     font-size:16px;
-    color:#ef4e23;
+    color:#ff0000;
     letter-spacing:0;
     line-height:18px;
     font-weight: bold;
@@ -1895,7 +1895,7 @@ td, th {
 .linkProducto2{
     font-family:Roboto-Light;
     font-size:16px;
-    color:#ef4e23;
+    color:#ff0000;
     letter-spacing:0;
     line-height:18px;
     font-weight: bold;
@@ -2782,13 +2782,14 @@ table tr th.width-4 {
     margin-top: 0px;
 }
 .nameHome{
-    position: relative;
     left: 40%;
     font-family: Roboto-Light !important;
     font-size: 25px !important;
     color: #aaaaaa;
     letter-spacing: 0;
     text-align: center;
+    position: static;
+    margin: 0 auto;
 }
 
 /*CONECTAR*/
@@ -3014,4 +3015,9 @@ table tr th.width-4 {
     text-align: center;
     margin-top: 10px;
     margin-left: 15%;
+}
+
+.configText {
+    padding: 20px;
+    font-size: 20px;
 }

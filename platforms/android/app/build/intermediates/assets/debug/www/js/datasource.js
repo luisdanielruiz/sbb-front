@@ -1,38 +1,44 @@
-var tySVersion = "tySVersion";
 var listVelRetos = null;
 var listForRetos = null;
+var statusConected = false;
+var isSensing = false;
+var dataSensor = [];
+var dataSensorHistory = [];
 
-function loadVelocidadRetos(){
-
-    $('.feedVelocidad').children("div").remove();
-        $.ajax({
-            type: "POST",
-            url: appServices.SBBListarRetos,
-            contentType: "application/json",
-            sync: false,
-            dataType: "JSON",
-            success: function (data) {
-               var parsedData =  JSON.parse(data);
-               if (parsedData.status === "ok") {
-                    listVelRetos = parsedData.result;
-
-                    for (var i = 0; i < listVelRetos.length; i++) {
-
-                        if(listVelRetos[i].tipoChallengue === "Velocidad"){
-                            //console.log(listVelRetos[i]);
-                            var profileHTML = compiledListVelocidadTemplate(listVelRetos[i]);
-                            $('.feedVelocidad').append(profileHTML);
-                        }
-                    }
-                }
-
-            },error: function (data) {
-                myApp.alert("Problemas en la conexión a internet","SBB");
-            }
-        });
+function stopSensing() {
+    isSensing = false;
 }
 
-function loadFuerzaRetos(){
+function startSensing() {
+    isSensing = true;
+}
+
+function loadVelocidadRetos() {
+    $('.feedVelocidad').children("div").remove();
+    $.ajax({
+        type: "POST",
+        url: appServices.SBBListarRetos,
+        contentType: "application/json",
+        sync: false,
+        dataType: "JSON",
+        success: function (data) {
+            var parsedData = JSON.parse(data);
+            if (parsedData.status === "ok") {
+                listVelRetos = parsedData.result;
+                for (var i = 0; i < listVelRetos.length; i++) {
+                    if (listVelRetos[i].tipoChallengue === "Velocidad") {
+                        var velocidadRetoHTML = compiledListVelocidadTemplate(listVelRetos[i]);
+                        $('.feedVelocidad').append(velocidadRetoHTML);
+                    }
+                }
+            }
+        }, error: function (data) {
+            myApp.alert("Problemas en la conexión a internet", "SBB");
+        }
+    });
+}
+
+function loadFuerzaRetos() {
 
     $('.feedFuerza').children("div").remove();
     $.ajax({
@@ -42,13 +48,13 @@ function loadFuerzaRetos(){
         sync: false,
         dataType: "JSON",
         success: function (data) {
-            var parsedData =  JSON.parse(data);
+            var parsedData = JSON.parse(data);
             if (parsedData.status === "ok") {
                 listForRetos = parsedData.result;
 
                 for (var i = 0; i < listForRetos.length; i++) {
 
-                    if(listForRetos[i].tipoChallengue === "Fuerza"){
+                    if (listForRetos[i].tipoChallengue === "Fuerza") {
                         //console.log(listForRetos[i]);
                         var profileHTML = compiledListFuerzaTemplate(listForRetos[i]);
                         $('.feedFuerza').append(profileHTML);
@@ -56,13 +62,13 @@ function loadFuerzaRetos(){
                 }
             }
 
-        },error: function (data) {
-            myApp.alert("Problemas en la conexión a internet","SBB");
+        }, error: function (data) {
+            myApp.alert("Problemas en la conexión a internet", "SBB");
         }
     });
 }
 
-function retoVel(){
+function retoVel() {
     loadPageConectar("retoVelocidad");
 }
 
@@ -70,9 +76,9 @@ function retoFor() {
     loadPageConectar("retoFuerza");
 }
 
-function loadAll(){
-$('#loading').css('z-index', 9999);
-$('#loading').css('display', 'block');
+function loadAll() {
+    $('#loading').css('z-index', 9999);
+    $('#loading').css('display', 'block');
     $('#loading').css('display', 'none');
 }
 
@@ -86,22 +92,21 @@ var ctx4;
 var myChart4;
 
 function removeCharts() {
-
     $('.chartContainer').children("div").remove();
 }
 
 function addCharts() {
     $('#chartContainer').append('<div class="chartHistory">\n' +
-        '                        <canvas id="myChart"></canvas>\n' +
-        '                    </div>') ;
+        '<canvas id="myChart"></canvas>\n' +
+        '</div>');
 
     $('#chartContainer').append('<div class="chartHistory">\n' +
-        '                        <canvas id="myChart2"></canvas>\n' +
-        '                    </div>') ;
+        '<canvas id="myChart2"></canvas>\n' +
+        '</div>');
 
     $('#chartContainer').append('<div class="chartHistory">\n' +
-        '                        <canvas id="myChart3"></canvas>\n' +
-        '                    </div>') ;
+        '<canvas id="myChart3"></canvas>\n' +
+        '</div>');
 
     loadStatistics();
 
@@ -109,7 +114,7 @@ function addCharts() {
 
 
 
-function loadStatistics(){
+function loadStatistics() {
 
     ctx = $("#myChart");
     myChart = new Chart(ctx, {
@@ -142,10 +147,10 @@ function loadStatistics(){
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
+                        beginAtZero: true
                     }
                 }]
-            },layout: {
+            }, layout: {
                 padding: {
                     left: 0,
                     right: 0,
@@ -178,11 +183,11 @@ function loadStatistics(){
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true,
+                        beginAtZero: true,
                         max: 500
                     }
                 }]
-            },layout: {
+            }, layout: {
                 padding: {
                     left: 0,
                     right: 0,
@@ -224,11 +229,11 @@ function loadStatistics(){
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true,
-                        max:800
+                        beginAtZero: true,
+                        max: 800
                     }
                 }]
-            },layout: {
+            }, layout: {
                 padding: {
                     left: 0,
                     right: 0,
@@ -245,75 +250,84 @@ function loadStatistics(){
 var status = 0; //0:stop 1:running
 var time = 0;
 var min;
-var sec;
+var sec = 0;
 var mSec;
+var retoTime;
 
-function start(){
+function start(secs) {
     status = 1;
+    retoTime = secs - 1;
     timer();
 }
 
-function stop(){
+function stop() {
     status = 0;
+    stopSensing();
+    dataSensorHistory.push([dataSensor]);
+    localStorage.setItem('dataSensorsHistory', JSON.stringify(dataSensorHistory));
+    dataSensor = [];
 }
 
-function reset(){
+function reset() {
     status = 0;
     time = 0;
     try {
         document.getElementById('timerLabel').innerHTML = '00:00:00';
-    }catch (e) {
+    } catch (e) {
 
     }
     try {
         document.getElementById('timerLabel2').innerHTML = '00:00:00';
-    }catch (e) {
+    } catch (e) {
 
     }
-
-
 }
 
-function timer(){
-    if(status == 1){
-        setTimeout(function(){
+function timer() {
+    if (status == 1 && sec <= retoTime) {
+        bluetoothSerial.read(function (data) {
+            var isDataEmpty = !Object.keys(data).length;
+            if (!isDataEmpty){
+                dataSensor.push([data]);
+                localStorage.setItem('dataSensors', JSON.stringify(dataSensor));
+            }
+        }, function (err) {
+            myApp.alert("error al leer datos", "SBB");
+        });
+        setTimeout(function () {
             time++;
-
-            min = Math.floor(time/100/60);
-            sec = Math.floor(time/100);
+            min = Math.floor(time / 100 / 60);
+            sec = Math.floor(time / 100);
             mSec = time % 100;
-            stopAut (sec);
 
-            if(min < 10) {
+            if (min < 10) {
                 min = "0" + min;
             }
-            if(sec >= 60) {
+            if (sec >= 60) {
                 sec = sec % 60;
 
             }
-            if(sec < 10) {
+            if (sec < 10) {
                 sec = "0" + sec;
             }
 
-            try{
+            try {
                 document.getElementById('timerLabel').innerHTML = min + ":" + sec + ":" + mSec;
-            }catch (e) {
+            } catch (e) {
 
             }
 
-            try{
+            try {
                 document.getElementById('timerLabel2').innerHTML = min + ":" + sec + ":" + mSec;
-            }catch (e) {
+            } catch (e) {
 
             }
-
-            timer();
-
+                timer();
         }, 10);
     }
 }
 
-function loadStatistics2(){
+function loadStatistics2() {
 
     ctx = $("#myChart");
     myChart = new Chart(ctx, {
@@ -346,10 +360,10 @@ function loadStatistics2(){
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
+                        beginAtZero: true
                     }
                 }]
-            },layout: {
+            }, layout: {
                 padding: {
                     left: 0,
                     right: 0,
@@ -388,11 +402,11 @@ function loadStatistics2(){
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true,
+                        beginAtZero: true,
                         max: 500
                     }
                 }]
-            },layout: {
+            }, layout: {
                 padding: {
                     left: 0,
                     right: 0,
@@ -434,11 +448,11 @@ function loadStatistics2(){
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true,
-                        max:800
+                        beginAtZero: true,
+                        max: 800
                     }
                 }]
-            },layout: {
+            }, layout: {
                 padding: {
                     left: 0,
                     right: 0,
@@ -480,10 +494,10 @@ function loadStatistics2(){
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
+                        beginAtZero: true
                     }
                 }]
-            },layout: {
+            }, layout: {
                 padding: {
                     left: 0,
                     right: 0,
@@ -495,3 +509,5 @@ function loadStatistics2(){
     });
 
 }
+
+

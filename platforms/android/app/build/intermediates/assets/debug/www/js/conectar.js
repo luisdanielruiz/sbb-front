@@ -1,8 +1,6 @@
 /********************CONECTAR***************************/
 var reto;
 var macAddress = "00:21:13:02:C3:4D"; //Arduino MAC
-var statusConected = false;
-
 
 function loadPageConectar(str) {
     reto = str;
@@ -28,49 +26,49 @@ function initializePageConectar() {
 
 function addActionsConectar() {
     $("#conectarBtn")[0].onclick = function enterKey(e) {
-        if(statusConected === true){
-            myApp.alert("ya esta conectado el dispositivo","SBB");
-        }else{
-            myApp.showPreloader("Loading", connectBtl());
+        if (statusConected === true) {
+            myApp.alert("ya esta conectado.", "SBB");
+        } else {
+            myApp.showPreloader("Loading...", connectBtl());
         }
     };
 }
-
+/** descomentar cuando se esten haciendo pruebas en navegador */
+//statusConected = true;
 function connectBtl() {
+    var weigthBagLocal;
+    if(localStorage.getItem('weightBag')){
+        weigthBagLocal = localStorage.getItem('pesoBolsa');
+    }else{
+        weigthBagLocal = "40";
+    }
     bluetoothSerial.connect(
         macAddress,
         function () {
             statusConected = true;
-            bluetoothSerial.write("1234", console.log("conected btl...."), console.log("error btl...."));
+            bluetoothSerial.write(weigthBagLocal, console.log("conected btl...."), console.log("error btl...."));
+            userHistory.pop();
             myApp.hidePreloader();
             switch (reto) {
                 case "retoVelocidad":
-                    loadPageRetoVelocidad();
+                loadPageVelocidad();
                     break;
                 case "retoFuerza":
-                    loadPageRetoFuerza();
+                loadPageFuerza();
                     break;
                 case "libre":
                     loadPageLibre();
                     break;
+            default:
+            loadPageHome();
+            break;
             }
         },
         function (err) {
             statusConected = false;
             myApp.hidePreloader();
-            myApp.alert("error conecting", "SBB");
+            myApp.alert("error conectando, intenta nuevamente", "SBB");
         }
     );
 }
-
-// function sendSignal() {
-//     window.bluetooth.write(
-//         function () {
-//             myApp.alert("Pairing Successful");
-//         },
-//         function (err) {
-//             console.log('There was an error Pairing to a device' + JSON.stringify(err));
-//             myApp.alert("There was an error Pairing to a device" + JSON.stringify(err));
-//         }, "t");
-// }
 

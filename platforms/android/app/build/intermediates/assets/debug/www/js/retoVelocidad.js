@@ -32,13 +32,7 @@ function addActionsRetoVelocidad() {
     catch (err) {
 
     }
-    setTimeout(function () { start(); }, 2000);
-
-}
-
-
-function stopAut(sec) {
-    if (sec === retoTime1) {
-        stop();
-    }
+    setTimeout(function () {
+        start(retoTime1);
+    }, 2000);
 }

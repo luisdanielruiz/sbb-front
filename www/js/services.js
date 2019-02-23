@@ -1,5 +1,5 @@
-//var urlServer="35.239.34.187";
-var urlServer="localhost:8085";
+var urlServer="35.202.240.171";
+//var urlServer="localhost:8085";
 
 var appServices = {
  SBBListarRetos:"http://"+urlServer+"/SBB/SBBListarChallenges",
@@ -10,4 +10,5 @@ var appServices = {
  SBBContacto:"http://"+urlServer+"/SBB/SBBContacto",
  SBBRecovery:"http://"+urlServer+"/SBB/SBBRecuperarPassword",
  SBBConfirmarMail:"http://"+urlServer+"/SBB/SBBConfirmarMail",
+ SBBWriteDataHit:"http://"+urlServer+"/SBB/SBBWriteDataHit"
 };
