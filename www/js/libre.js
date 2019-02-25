@@ -32,4 +32,21 @@ function addActionsLibre() {
   setTimeout(function() {
     start();
   }, 2000);
+
+  myApp.alert(
+    JSON.parse(localStorage.getItem("dataSensors")),
+    "data sensors local"
+  );
+  myApp.alert(
+    JSON.parse(localStorage.getItem("dataSensors"))[0][0].hitNumber,
+    "data local .hitnumber"
+  );
+  myApp.alert(
+    JSON.parse(localStorage.getItem("dataSensors"))[0].length,
+    "data local.length"
+  );
+  myApp.alert(
+    JSON.parse(localStorage.getItem(" dataSensorsHistory")),
+    "dataHistory.length"
+  );
 }
