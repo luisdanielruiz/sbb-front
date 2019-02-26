@@ -34,7 +34,7 @@ function loadEventReady(){
 function appReady(){
     setTimeout(function() {
         navigator.splashscreen.hide();
-    }, 10000);
+    }, 6000);
     document.addEventListener("backbutton", masterBack);
 }
 

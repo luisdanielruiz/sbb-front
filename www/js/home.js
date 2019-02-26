@@ -1,39 +1,51 @@
 /******************** Home ***************************/
-function loadPageHome(){
+function loadPageHome() {
     $('#toolBarBottom').removeClass('hideFooter');
     $('#navBarIos').removeClass('hideFooter');
-    $(".navbar").attr("style","");
+    $(".navbar").attr("style", "");
     $(".page").addClass("cached");
 
     refreshFooterHome();
 
-    if($(".home").length>0){
+    if ($(".home").length > 0) {
         $(".home").removeClass("cached");
         initializePageHome();
-    }else{
+    } else {
         mainView.router.reloadPage("ES/home.html");
     }
 }
 
-function initializePageHome(){
-    if(userHistory[userHistory.length-1] != $(".page:not(.cached)").attr("data-page")){
+function initializePageHome() {
+    if (userHistory[userHistory.length - 1] != $(".page:not(.cached)").attr("data-page")) {
         userHistory.push($(".page:not(.cached)").attr("data-page"));
     }
     addActionsHome();
 
 }
 
-function addActionsHome(){
-    $("#libre")[0].onclick = function enterKey(e) {
-        loadPageConectar("libre");
-    };
-
+function addActionsHome() {
     $("#velocidad")[0].onclick = function enterKey(e) {
-        loadPageVelocidad();
+        if (statusConected == true) {
+            loadPageVelocidad();
+        } else {
+            loadPageConectar("retoVelocidad");
+        }
     };
 
     $("#fuerza")[0].onclick = function enterKey(e) {
-        loadPageFuerza();
+        if (statusConected == true) {
+            loadPageFuerza();
+        } else {
+            loadPageConectar("retoFuerza");
+        }
+    };
+
+    $("#libre")[0].onclick = function enterKey(e) {
+        if (statusConected == true) {
+            loadPageLibre();
+        } else {
+            loadPageConectar("libre");
+        }
     };
 }
 

@@ -1,36 +1,31 @@
 /******************** History ***************************/
-function loadPageHistory(){
+function loadPageHistory() {
+    $('#myChart').remove();
+    $('#myChart2').remove();
+    $('#myChart3').remove();
 
-    $(".navbar").attr("style","");
+    $(".navbar").attr("style", "");
     $(".page").addClass("cached");
 
-    if($(".history").length>0){
+    if ($(".history").length > 0) {
         $(".history").removeClass("cached");
         initializePageHistory();
 
-    }else{
+    } else {
         mainView.router.reloadPage("ES/history.html");
 
     }
 }
 
 
-function initializePageHistory(){
-    if(userHistory[userHistory.length-1] != $(".page:not(.cached)").attr("data-page")){
+function initializePageHistory() {
+    if (userHistory[userHistory.length - 1] != $(".page:not(.cached)").attr("data-page")) {
         userHistory.push($(".page:not(.cached)").attr("data-page"));
     }
 
     addActionsHistory();
-    removeCharts();
-    addCharts();
 }
 
-function addActionsHistory(){
-    //removeCharts();
-    //addCharts();
+function addActionsHistory() {
     loadStatistics();
-
 }
-
-
-

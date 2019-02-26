@@ -3,7 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="6f5a8a40-47eb-4e64-9106-153a16694afe" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/conectar.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/conectar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/ES/fuerza.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/ES/fuerza.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/ES/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/ES/history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/ES/retoFuerza.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/ES/retoFuerza.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/ES/velocidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/ES/velocidad.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/css/dany.css" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/css/dany.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/conectar.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/conectar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/datasource.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/datasource.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/fuerza.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/fuerza.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/templates.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/templates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/velocidad.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/velocidad.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/fetch.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/fetch.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/services.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,8 +37,35 @@
       <file leaf-file-name="bluetooth.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/bluetooth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
+            <state relative-caret-position="6150">
               <caret line="410" selection-start-line="410" selection-end-line="410" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="conectar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/conectar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="84" lean-forward="true" selection-start-line="23" selection-start-column="84" selection-end-line="23" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/js/register.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="88" column="55" lean-forward="true" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -30,17 +73,8 @@
       <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/services.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="conectar.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/js/conectar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-58">
-              <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -48,7 +82,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
+            <state relative-caret-position="2250">
               <caret line="150" column="27" selection-start-line="150" selection-start-column="27" selection-end-line="150" selection-end-column="27" />
             </state>
           </provider>
@@ -117,11 +151,11 @@
         <option value="$PROJECT_DIR$/www/ES/history.html" />
         <option value="$PROJECT_DIR$/www/js/register.js" />
         <option value="$PROJECT_DIR$/www/js/datasource.js" />
-        <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/js/services.js" />
         <option value="$PROJECT_DIR$/www/js/bluetooth.js" />
         <option value="$PROJECT_DIR$/www/js/conectar.js" />
+        <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/www/js/services.js" />
       </list>
     </option>
   </component>
@@ -137,10 +171,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="35" />
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="39" />
     <option name="y" value="23" />
-    <option name="width" value="1245" />
+    <option name="width" value="1241" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -171,17 +208,6 @@
             <path>
               <item name="sbb-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="sbb-front" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sbb-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sbb-front" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sbb-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sbb-front" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -236,7 +262,13 @@
       <workItem from="1530493743478" duration="9296000" />
       <workItem from="1531325725611" duration="3139000" />
       <workItem from="1531506778757" duration="1925000" />
-      <workItem from="1531775643053" duration="4328000" />
+      <workItem from="1531775643053" duration="6031000" />
+      <workItem from="1532104807684" duration="316000" />
+      <workItem from="1532119967208" duration="1786000" />
+      <workItem from="1532204089883" duration="748000" />
+      <workItem from="1532286479686" duration="710000" />
+      <workItem from="1532395031099" duration="485000" />
+      <workItem from="1532439461429" duration="218000" />
     </task>
     <task id="LOCAL-00001" summary="Se limpia codigo y se crea navfooter">
       <created>1529531450477</created>
@@ -308,26 +340,32 @@
       <option name="project" value="LOCAL" />
       <updated>1531778321731</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Se agrega plugin de bluetooth test 1">
+      <created>1531781839218</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1531781839218</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63127000" />
+    <option name="totallyTimeSpent" value="69093000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="39" y="23" width="1241" height="777" extended-state="6" />
-    <editor active="true" />
+    <frame x="39" y="23" width="1241" height="777" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17377049" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32876712" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32876712" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32876712" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39878234" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -354,10 +392,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Se agrega plugin de bluetooth test 1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/js/register.js">
+    <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+        <state relative-caret-position="330">
+          <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -624,13 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/T/fuerzaTemplate.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -659,16 +690,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="84" selection-start-line="23" selection-start-column="84" selection-end-line="23" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
+        <state relative-caret-position="2250">
           <caret line="150" column="27" selection-start-line="150" selection-start-column="27" selection-end-line="150" selection-end-column="27" />
         </state>
       </provider>
@@ -680,24 +704,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/bluetooth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
+        <state relative-caret-position="6150">
           <caret line="410" selection-start-line="410" selection-end-line="410" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/conectar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
+        <state relative-caret-position="465">
           <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="84" lean-forward="true" selection-start-line="23" selection-start-column="84" selection-end-line="23" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="88" column="55" lean-forward="true" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
         </state>
       </provider>
     </entry>

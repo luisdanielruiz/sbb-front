@@ -148,7 +148,7 @@ function modificar(){
     console.log(datos);
 		$.ajax({
           	type: "GET", 
-			url: appServices.TySMyAccount,
+			url: appServices.SBBMyAccount,
 			data:datos,//+'&password='+dataPass1,
             contentType: "application/json",
           	sync: false, 

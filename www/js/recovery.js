@@ -43,7 +43,7 @@ function recuperarPassword(){
 		console.log(datos);
 		$.ajax({
 				type: "GET", 
-				url: appServices.TySRecovery, 
+				url: appServices.SBBRecovery, 
 				data:datos,
 				contentType: "application/json",
 				sync: false, 

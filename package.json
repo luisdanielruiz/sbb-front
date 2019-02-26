@@ -1,0 +1,13 @@
+{
+  "name": "com.sbb",
+  "version": "1.0",
+  "displayName": "Smart Boxing Bag",
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {
+    "cordova-android": "~7.1.4"
+  }
+}
