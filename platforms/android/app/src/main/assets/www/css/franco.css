@@ -1,0 +1,171 @@
+/* latin */
+@font-face {
+  font-family: 'Roboto-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/RxZJdnzeo3R5zSexge8UUZBw1xU1rKptJj_0jans920.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Roboto-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/77FXFjRbGzN4aCrSFhlh3hJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+@font-face {
+  font-family: 'Roboto-Italic';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/WxrXJa0C3KdtC7lMafG4dRTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* iconito de menú */
+.fa-bars{
+	color: #c8c8c8!important;
+    font-size: 20px!important;
+    margin-left: 82%!important;
+    margin-top: 5px!important;
+} 
+/* page REGISTER */
+.register .toolbar-correc .toolbar-inner{
+    background-color:#75a022;
+}
+.register .toolbar-correc .toolbar-inner .color-link{
+    background-color: #ffffff;
+    color: #2f2d2d;
+}
+.register .txt-form{
+    margin: 20px 15px;
+    font-size: 14px;
+}
+.register #registerBtn{
+    opacity:0.79;
+	background:#ef4e23;
+	border-radius:2px;
+	width:340px;
+	height:50px;
+	display: inline-block;
+	font-family:Roboto-Regular;
+	margin-top:7px;
+	
+}
+.register .page-content{
+    background: #f7f7f7;
+	margin-top: 20px;
+	font-family:Roboto-light;
+}
+.register .navbar-fixed .page-content, .navbar-through .page-content {
+    padding-top: 44px ;
+}
+.register #ulRegister {
+    background: transparent ; 
+	font-family:Roboto-light !important;
+    list-style: none ;
+    padding: 0 ;
+    margin: 0 ;
+    position: relative ;
+}
+.register .list-block ul:before {
+	 background: transparent!important; 
+}
+.register .list-block .item-inner:after {
+    background-color: #a9a9a9!important;
+	width: 95%;
+}
+.register .list-block ul:after{
+    background-color: #a9a9a9!important;
+    width: 91%;
+    left: 15px;
+}
+.register #ulRegister ::placeholder { 
+	color:#adadad;	
+}
+.register #goBackRegister{
+	font-family:Roboto-LightItalic;
+	font-size:17px;
+	color:#ef4e23;
+	text-align:center;
+}
+.register .page-content{
+	padding-bottom: 0px;
+}
+.register .content-block-padding{
+	margin-top:-5px;
+}
+/* end page - REGISTER */
+
+/* page MYACCOUNT */
+.myAccount .list-block{
+	width: 95%;
+    margin-left: 10px;
+}
+
+.myAccount .page-content{
+	background:#ffffff;
+}
+.myAccount #labelUserNameMyAccount{
+	text-align: center;
+    background: transparent;
+    font-family: Roboto-Medium;
+    font-size: 20px;
+    color: #a0a0a0;
+    letter-spacing: 0px;
+    text-align: center;
+    display: block;
+    margin-top: 60px;
+}
+.myAccount .list-block #ulMyAccount{
+	background:transparent !important; 
+	margin-top:50px;
+}
+.myAccount .list-block ul:before{
+	background:transparent !important; 
+    width: 91%;
+	left: 15px;
+}
+.myAccount .list-block .item-inner:after{
+	background-color: #a9a9a9!important;
+	width: 95%;	
+}
+.myAccount .list-block ul:after{	
+    width: 91%;
+	left: 15px;
+}
+.myAccount #ulMyAccount ::placeholder { 
+	color:#adadad;	
+}
+.myAccount #modificarBtn{
+    position: absolute;
+    margin-left: 25px;
+    width: 320px;
+    text-align: center;
+}
+.myAccount .toolbar-inner p{	
+	position: absolute;
+	margin-left: -32px!important;
+    left: 50%;
+	color: #aaaaaa;
+	font-size:19px;
+    font-family:Roboto-Medium;
+	padding-left:0!important;
+	
+}
+#myAccount{
+    font-family: Roboto-Light !important;
+    font-size: 31px;
+    color: #aaaaaa;
+    letter-spacing: 0;
+    text-align: center;
+    margin-left: -10%;
+    margin-bottom: 10%;
+}
+/* end page - MYACCOUNT */
