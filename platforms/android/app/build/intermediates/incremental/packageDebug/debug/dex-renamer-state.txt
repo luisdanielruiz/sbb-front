@@ -1,4 +1,4 @@
-#Wed Apr 24 19:42:40 ART 2019
+#Sun May 12 19:59:55 ART 2019
 base.0=/Users/daniel/sbb-front/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -1,21 +1,15 @@
 var listVelRetos = null;
 var listForRetos = null;
 var statusConected = false;
-var isSensing = false;
-var dataSensor = [];
+var dataSensor = {
+  sensor: "acelerometer",
+  data: []
+};
 var dataSensorHistory = [];
 var idUserGlobal = JSON.parse(localStorage.getItem("localUser")).result.idUser;
 var dataPrincipiante = [];
 var dataProfesional = [];
 var dataAmateur = [];
-
-function stopSensing() {
-  isSensing = false;
-}
-
-function startSensing() {
-  isSensing = true;
-}
 
 function loadVelocidadRetos() {
   $(".feedVelocidad")
@@ -343,33 +337,15 @@ function start(secs) {
   timer();
 }
 
-function stop() {
-  status = 0;
-  stopSensing();
-  dataSensorHistory.push([dataSensor]);
-  localStorage.setItem("dataSensorsHistory", JSON.stringify(dataSensorHistory));
-  dataSensor = [];
-  bluetoothSerial.clear(
-    console.log("data clear"),
-    console.log("data clear error")
-  );
-}
-
-function reset() {
-  status = 0;
-  time = 0;
-  try {
-    document.getElementById("timerLabel").innerHTML = "00:00:00";
-  } catch (e) {}
-  try {
-    document.getElementById("timerLabel2").innerHTML = "00:00:00";
-  } catch (e) {}
-  bluetoothSerial.clear(
-    console.log("data clear"),
-    console.log("data clear error")
-  );
-  dataSensor = [];
-}
+// function stop() {
+//   status = 0;
+//   stopSensing();
+//   dataSensor = [];
+//   bluetoothSerial.clear(
+//     console.log("data clear"),
+//     console.log("data clear error")
+//   );
+// }
 
 function timer() {
   if (status == 1 && sec <= retoTime) {
@@ -377,7 +353,7 @@ function timer() {
       function(data) {
         var isDataEmpty = !Object.keys(data).length;
         if (!isDataEmpty) {
-          dataSensor.push([data]);
+          dataSensor.data.push(JSON.parse(data));
           localStorage.setItem("dataSensors", JSON.stringify(dataSensor));
         }
       },
@@ -414,3 +390,21 @@ function timer() {
     }, 10);
   }
 }
+
+function reset() {
+  status = 0;
+  time = 0;
+  try {
+    document.getElementById("timerLabel").innerHTML = "00:00:00";
+  } catch (e) {}
+  try {
+    document.getElementById("timerLabel2").innerHTML = "00:00:00";
+  } catch (e) {}
+  bluetoothSerial.clear(
+    console.log("data clear"),
+    console.log("data clear error")
+  );
+  dataSensor.data = [];
+}
+
+

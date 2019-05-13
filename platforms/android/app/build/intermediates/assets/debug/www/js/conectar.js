@@ -43,36 +43,43 @@ function connectBtl() {
   } else {
     weigthBagLocal = "40";
   }
-  bluetoothSerial.connect(
-    macAddress,
-    function() {
-      statusConected = true;
-      bluetoothSerial.write(
-        weigthBagLocal,
-        console.log("conected btl...."),
-        console.log("error btl....")
-      );
-      userHistory.pop();
-      myApp.hidePreloader();
-      switch (reto) {
-        case "retoVelocidad":
-          loadPageVelocidad();
-          break;
-        case "retoFuerza":
-          loadPageFuerza();
-          break;
-        case "libre":
-          loadPageLibre();
-          break;
-        default:
-          loadPageHome();
-          break;
-      }
+  bluetoothSerial.isEnabled(
+    function () {
+      bluetoothSerial.connect(
+        macAddress,
+        function() {
+          statusConected = true;
+          bluetoothSerial.write(
+            weigthBagLocal,
+            console.log("conected btl...."),
+            console.log("error btl....")
+          );
+          userHistory.pop();
+          myApp.hidePreloader();
+          switch (reto) {
+            case "retoVelocidad":
+              loadPageVelocidad();
+              break;
+            case "retoFuerza":
+              loadPageFuerza();
+              break;
+            case "libre":
+              loadPageLibre();
+              break;
+            default:
+              loadPageHome();
+              break;
+          }
+        },
+        function(err) {
+          statusConected = false;
+          myApp.hidePreloader();
+          myApp.alert("error conectando, intenta nuevamente", "SBB");
+        }
+      )
     },
-    function(err) {
-      statusConected = false;
-      myApp.hidePreloader();
-      myApp.alert("error conectando, intenta nuevamente", "SBB");
+    function() {
+      myApp.alert("Enciende el bluetooth, por vafavor.", "SBB");
     }
   );
 }
