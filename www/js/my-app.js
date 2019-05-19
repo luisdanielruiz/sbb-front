@@ -219,6 +219,10 @@ $("#button_logOut").click(function() {
   loadPageLogin();
 });
 
+$("#menu-instructions").click(function() {
+  loadPageInstructions();
+});
+
 if (localStorage.localUser) {
   $("#menu-logIn").css("display", "none");
   $("#menu-logOut").css("display", "block");
