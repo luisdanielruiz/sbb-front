@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.sbb" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <feature name="Bluetooth">
+        <param name="android-package" value="org.apache.cordova.bluetooth.BluetoothPlugin" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Accelerometer">
+        <param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
+    </feature>
+    <feature name="Compass">
+        <param name="android-package" value="org.apache.cordova.deviceorientation.CompassListener" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="Globalization">
+        <param name="android-package" value="org.apache.cordova.globalization.Globalization" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Vibration">
+        <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="BluetoothSerial">
+        <param name="android-package" value="com.megster.cordova.BluetoothSerial" />
+    </feature>
+    <name>Smart Boxing Bag</name>
+    <description>
+        Smart Boxing Bag
+    </description>
+    <author email="luis.ruizrozo@davinci.edu.ar" href="http://sbb.com">
+        SBB
+    </author>
+    <content src="index.html" />
+    <splash src="/www/splash.png" />
+    <access origin="*" />
+    <access launch-external="yes" origin="tel:*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
+    <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
+    <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
+    <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
+    <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
+    <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
+    <allow-intent href="market:*" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="SplashScreenDelay" value="6000" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="14" />
+</widget>

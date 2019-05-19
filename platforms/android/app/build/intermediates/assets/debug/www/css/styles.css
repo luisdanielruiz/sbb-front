@@ -1,0 +1,59 @@
+/* Popup Home */
+
+.popup .title { 
+    font-weight: bold;
+    padding: 0.75em;
+    color: #fff;
+    background: #75a022;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
+.popup .title h3 {
+    font-size: 18px; 
+}
+.popup .title .close-popup { 
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 11px; 
+}
+
+.popup-order { 
+    max-width: 70%;
+    left: 15%;
+    top: 25%;
+    height: auto;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    display: block;
+   
+}
+.popup-order .item-media {
+    min-width: 25px; 
+}
+
+.popup.popup-order.modal-in.remove-on-close {
+    display: block !important;
+    top: 10% !important;
+    left: 15% !important;
+}
+
+.holder {
+    position: relative;
+}
+.dropdown, .dropdownCatalog {
+    border: 1px solid black;
+    display: none;
+    z-index: 1000000000;
+    background: white;
+    text-align: left !important;
+    line-height: 1.4; 
+}
+
+input:focus + .dropdown {
+    display: block;
+}
+
+input:focus + .dropdownCatalog {
+    display: block;
+}

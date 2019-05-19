@@ -25,28 +25,54 @@ function initializePageLibre() {
 function addActionsLibre() {
   try {
     reset();
+    serializeDataSensor();
   } catch (err) {
-    console.log(err);
+    myApp.alert(err);
   }
+}
 
-  setTimeout(function() {
-    start();
-  }, 2000);
+function serializeDataSensor() {
+  try {
+    var localDataSensor = JSON.parse(localStorage.getItem("dataSensors"));
+    if (localDataSensor) {
+      parseDataSensor(localDataSensor);
+    }
+  } catch (e) {
+    myApp.alert(e, "RESET_ERROR");
+  }
+}
 
-  myApp.alert(
-    JSON.parse(localStorage.getItem("dataSensors")),
-    "data sensors local"
-  );
-  myApp.alert(
-    JSON.parse(localStorage.getItem("dataSensors"))[0][0].hitNumber,
-    "data local .hitnumber"
-  );
-  myApp.alert(
-    JSON.parse(localStorage.getItem("dataSensors"))[0].length,
-    "data local.length"
-  );
-  myApp.alert(
-    JSON.parse(localStorage.getItem(" dataSensorsHistory")),
-    "dataHistory.length"
-  );
+function parseDataSensor(arr) {
+  var dataHits;
+  var dataFinal;
+  try {
+    dataHits = arr.data.join().split(",");
+    dataFinal = dataHits.map(item => JSON.parse(item));
+  } catch (e) {
+    myApp.alert(e, "SERIALIZE_DATA_ERROR");
+  }
+  try {
+    $.ajax({
+      type: "GET",
+      url: appServices.SBBWriteStatistics,
+      data:
+        "user=" +
+        idUserGlobal +
+        "&challengue=Principiante" +
+        "&tipoChallengue=Fuerza" +
+        "&hits=[" + dataFinal + "]",
+      contentType: "application/json",
+      sync: false,
+      dataType: "JSON",
+      success: function(data) {
+        $("#loading").css("display", "none");
+      },
+      error: function(data) {
+        $("#loading").remove();
+        myApp.alert("Problemas en la conexión a internet", "SBB");
+      }
+    });
+  } catch (e) {
+    myApp.alert(e, "SEND_STATISTICS_DATA");
+  }
 }
