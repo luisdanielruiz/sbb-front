@@ -55,7 +55,12 @@ function parseDataSensor(arr) {
     $.ajax({
       type: "GET",
       url: appServices.SBBWriteStatistics,
-      data: "user=" + idUserGlobal + "&challengue=Principiante" + "&tipoChallengue=Velocidad" + "&hits=[" + dataFinal + "]",
+      data:
+        "user=" +
+        idUserGlobal +
+        "&challengue=Principiante" +
+        "&tipoChallengue=Fuerza" +
+        "&hits=[" + dataFinal + "]",
       contentType: "application/json",
       sync: false,
       dataType: "JSON",
@@ -68,7 +73,6 @@ function parseDataSensor(arr) {
       }
     });
   } catch (e) {
-    myApp.alert(e,"SEND_STATISTICS_DATA");
+    myApp.alert(e, "SEND_STATISTICS_DATA");
   }
-  myApp.confirm("dataFinal: " + dataFinal, function() {});
 }
