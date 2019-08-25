@@ -180,7 +180,7 @@ $$(document).on("pageInit", function(e) {
 
 /* buttons nav */
 
-$("#button_home").click(function() {
+$("#menu_home").click(function() {
   loadPageHome();
 });
 
@@ -196,7 +196,7 @@ $("#iconMyAccount").click(function() {
   loadPageMyAccount();
 });
 
-$("#button_contact").click(function() {
+$("#menu-contact").click(function() {
   titleMessaje = null;
   messaje = null;
   $("#asuntoInput").val(titleMessaje);
