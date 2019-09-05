@@ -487,7 +487,9 @@ html.pixel-ratio-2 .toolbar:before {
   z-index: 999;
   font-size: 18px
 }
-
+#nameInstructions {
+  margin: 0 auto 0 12px
+}
 .modal-content {
   margin: auto;
   display: block;
