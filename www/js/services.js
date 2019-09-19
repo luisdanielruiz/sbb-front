@@ -1,15 +1,15 @@
-var urlServer="35.202.240.171";
-//var urlServer="localhost:8085";
+var hostServer="sbb-app.tech";
+ var hostServer="localhost:8085";
 
 var appServices = {
- SBBListarRetos:"http://"+urlServer+"/SBB/SBBListarChallenges",
- SBBLogin:"http://"+urlServer+"/SBB/SBBLoginManual",
- SBBRegister:"http://"+urlServer+"/SBB/SBBRegistroManual",
- SBBMyAccount:"http://"+urlServer+"/SBB/SBBMyAccount",
- SBBImg:"http://"+urlServer+"/SBB/",
- SBBContacto:"http://"+urlServer+"/SBB/SBBContacto",
- SBBRecovery:"http://"+urlServer+"/SBB/SBBRecuperarPassword",
- SBBConfirmarMail:"http://"+urlServer+"/SBB/SBBConfirmarMail",
- SBBWriteStatistics:"http://"+urlServer+"/SBB/SBBWriteStatistics",
- SBBReadDataStatistics:"http://"+urlServer+"/SBB/SBBReadDataStatistics"
+ SBBListarRetos:"http://"+hostServer+"/SBB/SBBListarChallenges",
+ SBBLogin:"http://"+hostServer+"/SBB/SBBLoginManual",
+ SBBRegister:"http://"+hostServer+"/SBB/SBBRegistroManual",
+ SBBMyAccount:"http://"+hostServer+"/SBB/SBBMyAccount",
+ SBBImg:"http://"+hostServer+"/SBB/",
+ SBBContacto:"http://"+hostServer+"/SBB/SBBContacto",
+ SBBRecovery:"http://"+hostServer+"/SBB/SBBRecuperarPassword",
+ SBBConfirmarMail:"http://"+hostServer+"/SBB/SBBConfirmarMail",
+ SBBWriteStatistics:"http://"+hostServer+"/SBB/SBBWriteStatistics",
+ SBBReadDataStatistics:"http://"+hostServer+"/SBB/SBBReadDataStatistics"
 };
