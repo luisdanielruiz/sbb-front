@@ -1,5 +1,5 @@
 var hostServer="sbb-app.tech";
- var hostServer="localhost:8085";
+//var hostServer="localhost:8085";
 
 var appServices = {
  SBBListarRetos:"http://"+hostServer+"/SBB/SBBListarChallenges",
