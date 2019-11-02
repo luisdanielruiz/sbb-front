@@ -9,7 +9,7 @@ function loadPageConfig() {
     $(".config").removeClass("cached");
     initializePageConfig();
   } else {
-    mainView.router.reloadPage("ES/config.html");
+    mainView.router.reloadPage(appConfig.lang + "/config.html");
   }
 }
 

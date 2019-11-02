@@ -6,7 +6,7 @@ var dataSensor = {
   data: []
 };
 var dataSensorHistory = [];
-var idUserGlobal = JSON.parse(localStorage.getItem("localUser")).result.idUser;
+var idUserGlobal = JSON.parse(localStorage.localUser).result.idUser;
 var dataPrincipiante = [];
 var dataProfesional = [];
 var dataAmateur = [];
@@ -192,7 +192,7 @@ function loadStatistics(dataPrincipiante, dataProfesional, dataAmateur) {
       labels: ["Principiante", "Amateur", "Profesional"],
       datasets: [
         {
-          label: "Golpe menos fuerte",
+          label: "Golpe promedio",
           data: [minHitPrincipiante, minHitAmateur, minHitProfesional],
           backgroundColor: ["rgba(153, 102, 255, 0.2)"],
           borderColor: ["rgba(153, 102, 255, 1)"],
@@ -280,7 +280,7 @@ function loadStatistics(dataPrincipiante, dataProfesional, dataAmateur) {
       labels: ["Principiante", "Amateur", "Profesional"],
       datasets: [
         {
-          label: "# of Votes",
+          label: "# de golpes",
           data: [12, 19, 13],
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",

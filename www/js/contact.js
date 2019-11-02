@@ -1,6 +1,8 @@
 /******************** CONTACT ***************************/
 function loadPageContact() {
+  $(".navbar").attr("style", "");
   $(".page").addClass("cached");
+  
   refreshFooterContact();
 
   if ($(".contact").length > 0) {

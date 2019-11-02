@@ -715,6 +715,9 @@ html.pixel-ratio-2 .toolbar:before {
   border-radius: 8px;
   margin: 15px 10px
 }
+#nameConfig {
+  margin: 0 auto 0 52px;
+}
 
 .configText {
   padding: 20px;

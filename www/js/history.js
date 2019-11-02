@@ -16,10 +16,7 @@ function loadPageHistory() {
 }
 
 function initializePageHistory() {
-  if (
-    userHistory[userHistory.length - 1] !=
-    $(".page:not(.cached)").attr("data-page")
-  ) {
+  if (userHistory[userHistory.length - 1] != $(".page:not(.cached)").attr("data-page")) {
     userHistory.push($(".page:not(.cached)").attr("data-page"));
   }
 

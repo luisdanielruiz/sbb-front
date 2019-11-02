@@ -1,6 +1,7 @@
+/******************** INSTRUCTIONS ***************************/
 function loadPageInstructions(){
-/******************** CONTACT ***************************/
     $(".page").addClass("cached");
+    
     refreshFooterInstructions();
   
     if ($(".instructions").length > 0) {

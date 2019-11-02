@@ -96,4 +96,5 @@ function loginAjax() {
 
 function omitirRegistro() {
   loadPageHome();
+  localStorage.setItem("localUser", "");
 }

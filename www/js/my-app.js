@@ -119,62 +119,56 @@ var compiledMyAccountTemplate;
 $$(document).on("pageInit", function(e) {
   var page = e.detail.page;
 
-  if (page.name === "index") {
-  }
-
-  if (page.name === "home") {
-    initializePageHome();
-  }
-
-  if (page.name === "myAccount") {
-    initializePageMyAccount();
-  }
-
-  if (page.name === "history") {
-    initializePageHistory();
-  }
-
-  if (page.name === "register") {
-    initializePageRegister();
-  }
-
-  if (page.name === "contact") {
-    initializePageContact();
-  }
-
-  if (page.name === "config") {
-    initializePageConfig();
-  }
-
-  if (page.name === "login") {
-    initializePageLogin();
-  }
-  if (page.name === "conectar") {
-    initializePageConectar();
-  }
-
-  if (page.name === "recovery") {
-    initializePageRecovery();
-  }
-
-  if (page.name === "libre") {
-    initializePageLibre();
-  }
-
-  if (page.name === "velocidad") {
-    initializePageVelocidad();
-  }
-
-  if (page.name === "fuerza") {
-    initializePageFuerza();
-  }
-
-  if (page.name === "retoVelocidad") {
-    initializePageRetoVelocidad();
-  }
-
-  if (page.name === "retoFuerza") {
-    initializePageRetoFuerza();
+  switch (page.name) {
+    case "index":     
+      break;
+    case "home":
+      initializePageHome();
+      break;
+    case "myAccount":
+      initializePageMyAccount();
+      break;
+    case "register":
+      initializePageRegister();
+      break;
+    case "contact":
+      initializePageContact();
+      break;
+    case "recovery":
+      initializePageRecovery();
+      break;
+    case "conectar":
+      initializePageConectar();
+      break;
+    case "history":
+      initializePageHistory();
+      break;
+    case "config":
+      initializePageConfig();
+      break;
+    case "velocidad":
+      initializePageVelocidad();
+      break;
+    case "fuerza":
+      initializePageFuerza();
+      break;
+    case "retoVelocidad":
+      initializePageRetoVelocidad();
+      break;
+    case "retoFuerza":
+      initializePageRetoFuerza();
+      break;
+    case "libre":
+      initializePageLibre();
+      break;
+    case "login":
+      initializePageLogin();
+      break;
+    case "instructions":
+      initializePageInstructions();
+      break;
+    default:
+      break;
   }
 });
 
