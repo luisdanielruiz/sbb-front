@@ -1,6 +1,7 @@
 /******************** Login ***************************/
 function loadPageLogin() {
-  $("#toolBarBottom").addClass("hideFooter");
+  $("#toolBarBottom").css("display", "none");
+  //$("#toolBarBottom").addClass("hideFooter");
   $("#navBarIos").addClass("hideFooter");
   $(".page").addClass("cached");
 

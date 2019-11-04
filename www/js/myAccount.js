@@ -3,7 +3,8 @@ var onceMyAccount = false;
 var cambioPass = false;
 
 function loadPageMyAccount() {
-  $("#toolBarBottom").removeClass("hideFooter");
+  $("#toolBarBottom").css("display", "block");
+  // $("#toolBarBottom").removeClass("hideFooter");
 
   $(".page").addClass("cached");
   refreshFooterMyAccount();

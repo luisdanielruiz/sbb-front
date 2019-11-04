@@ -24,7 +24,8 @@ function initializePageContact() {
 }
 
 function addActionsContact() {
-  $("#toolBarBottom").removeClass("hideFooter");
+  $("#toolBarBottom").css("display", "block");
+  //$("#toolBarBottom").removeClass("hideFooter");
 
   $("#sendMail")[0].onclick = function enterKey(e) {
     sendMail();

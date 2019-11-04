@@ -19,23 +19,7 @@ function loadPageInstructions(){
     ) {
       userHistory.push($(".page:not(.cached)").attr("data-page"));
     }
-    //addActionsContact();
-  }
-  
-//   function addActionsContact() {
-//     $("#toolBarBottom").removeClass("hideFooter");
-  
-//     $("#sendMail")[0].onclick = function enterKey(e) {
-//       sendMail();
-//     };
-//     if (titleMessaje != null) {
-//       $("#asuntoInput").val(titleMessaje);
-//     }
-//     if (messaje != null) {
-//       $("#mensajeInput").val(messaje);
-//     }
-//   }
-  
+  }  
 
   function refreshFooterInstructions() {
     $(".icon-home").removeClass("selectedIcon");
