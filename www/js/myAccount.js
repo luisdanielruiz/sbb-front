@@ -216,13 +216,18 @@ function modificar() {
 }
 
 function appendMyAccount() {
-  if (!onceMyAccount) {
-    var profileHTML = compiledMyAccountTemplate(Juser.result);
+  if(localStorage.localUser!=""){
+    if (!onceMyAccount) {
+      var profileHTML = compiledMyAccountTemplate(Juser.result);
 
-    $(".myAccountContent").append($(profileHTML));
-    $("#modificarBtn").css("display", "none");
-    addActionsMyAccount();
-    onceMyAccount = true;
+      $(".myAccountContent").append($(profileHTML));
+      $("#modificarBtn").css("display", "none");
+      addActionsMyAccount();
+      onceMyAccount = true;
+    }
+  }else{ 
+    myApp.alert("Debe ingresar su usuario primero", "SBB");
+    masterBack();
   }
 }
 function refreshFooterMyAccount() {
