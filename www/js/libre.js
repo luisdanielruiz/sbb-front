@@ -26,8 +26,8 @@ function addActionsLibre() {
   try {
     reset();
     serializeDataSensor();
-  } catch (err) {
-    myApp.alert(err);
+  } catch (e) {
+    myApp.alert(e, "SBB");
   }
 }
 
@@ -38,7 +38,7 @@ function serializeDataSensor() {
       parseDataSensor(localDataSensor);
     }
   } catch (e) {
-    myApp.alert(e, "RESET_ERROR");
+    myApp.alert(e, "SBB");
   }
 }
 
@@ -49,7 +49,7 @@ function parseDataSensor(arr) {
     dataHits = arr.data.join().split(",");
     dataFinal = dataHits.map(item => JSON.parse(item));
   } catch (e) {
-    myApp.alert(e, "SERIALIZE_DATA_ERROR");
+    myApp.alert(e, "SBB");
   }
   try {
     $.ajax({
@@ -73,6 +73,6 @@ function parseDataSensor(arr) {
       }
     });
   } catch (e) {
-    myApp.alert(e, "SEND_STATISTICS_DATA");
+    myApp.alert(e, "SBB");
   }
 }

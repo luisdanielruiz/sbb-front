@@ -44,8 +44,10 @@ function registerAjax() {
   var dataSurname = $("#inputSurname").val();
   var dataEmail = $("#inputEmail").val();
   var dataphone = "123456";
-  var dataPass1 = $("#inputPassword1").val();
-  var dataPass2 = $("#inputPassword2").val();
+  var pass1 = $("#inputPassword1").val();
+  var pass2 = $("#inputPassword2").val();
+  var dataPass1 = CryptoJS.MD5(pass1).toString();
+  var dataPass2 = CryptoJS.MD5(pass2).toString();
   try {
     if (
       dataName === null ||

@@ -24,5 +24,10 @@ function initializePageHistory() {
 }
 
 function addActionsHistory() {
-  fetchStatistics();
+  if(localStorage.localUser != ""){
+    fetchStatistics();
+  }else{
+    myApp.alert("Debes iniciar sesion.", "SBB");
+    masterBack();
+  }
 }

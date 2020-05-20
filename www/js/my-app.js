@@ -120,7 +120,7 @@ $$(document).on("pageInit", function(e) {
   var page = e.detail.page;
 
   switch (page.name) {
-    case "index":     
+    case "index":
       break;
     case "home":
       initializePageHome();
@@ -230,5 +230,6 @@ if (Juser != null && Juser.result.idUser) {
   loadPageHome();
   $(".name-user").html("¡Hola " + Juser.result.name + "!");
 } else {
+  localStorage.setItem("localUser", "");
   loadPageLogin();
 }

@@ -29,7 +29,10 @@ function initializePageRetoVelocidad() {
 function addActionsRetoVelocidad() {
   try {
     reset();
-  } catch (err) {}
+  } catch (e) {
+    myApp.alert(e, "SBB");
+  }
+
   setTimeout(function() {
     start(retoTime1);
   }, 2000);
