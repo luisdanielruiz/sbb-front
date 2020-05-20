@@ -106,10 +106,11 @@ function modificar() {
   var dataName = $("#inputNameMyAccount").val();
   var dataSurname = $("#inputSurNameMyAccount").val();
   var dataEmail = $("#inputEmailMyAccount").val();
-  var dataPhone = $("#inputPhoneMyAccount").val();
   var dataPass = $("#inputOldPassMyAccount").val();
-  var dataPass1 = $("#inputNewPassMyAccount1").val();
-  var dataPass2 = $("#inputNewPassMyAccount2").val();
+  var pass1 = $("#inputNewPassMyAccount1").val();
+  var pass2 = $("#inputNewPassMyAccount2").val();
+  var dataPass1 = CryptoJS.MD5(pass1).toString();
+  var dataPass2 = CryptoJS.MD5(pass2).toString();
   var passValitation = true;
 
   if (dataUser === null) {
@@ -124,23 +125,19 @@ function modificar() {
   if (dataEmail === null) {
     dataEmail = JSON.stringify(a.result.email);
   }
-  if (dataPhone === null) {
-    dataPhone = JSON.stringify(a.result.phone);
-  }
 
   var datos =
     "idUser=" +
     Juser.result.idUser +
     "&userName=" +
-    dataUser +
+    dataName +
     "&name=" +
     dataName +
     "&surname=" +
     dataSurname +
     "&email=" +
     dataEmail +
-    "&phone=" +
-    dataPhone;
+    "&phone=1234567&city=city&dni=12345678&address=address&country=country";
 
   if (
     cambioPass === true &&
@@ -158,8 +155,7 @@ function modificar() {
       dataSurname +
       "&email=" +
       dataEmail +
-      "&phone=" +
-      dataPhone +
+      "&phone=1234567&city=city&dni=12345678&address=address&country=country" +
       "&password=" +
       dataPass +
       "&newPassword1=" +
@@ -226,7 +222,7 @@ function appendMyAccount() {
       onceMyAccount = true;
     }
   }else{ 
-    myApp.alert("Debe ingresar su usuario primero", "SBB");
+    myApp.alert("Debes iniciar sesion.", "SBB");
     masterBack();
   }
 }

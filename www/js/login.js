@@ -1,7 +1,6 @@
 /******************** Login ***************************/
 function loadPageLogin() {
   $("#toolBarBottom").css("display", "none");
-  //$("#toolBarBottom").addClass("hideFooter");
   $("#navBarIos").addClass("hideFooter");
   $(".page").addClass("cached");
 
@@ -31,19 +30,17 @@ function addActionsLogin() {
     loadPageRecovery();
   };
 
-  $("#omitir")[0].onclick = function enterKey(e) {
-    omitirRegistro();
-  };
+  // $("#omitir")[0].onclick = function enterKey(e) {
+  //   omitirRegistro();
+  // };
 }
 
 var Juser;
-try {
-  Juser = JSON.parse(localStorage.localUser);
-} catch (as) {}
 
 function loginAjax() {
   var dataMail = $("#loginManual_input_email").val();
-  var dataPass = $("#loginManual_input_pass").val();
+  var pass = $("#loginManual_input_pass").val();
+  var dataPass = CryptoJS.MD5(pass).toString();
 
   $("#loading").css("z-index", 9999);
   $("#loading").css("display", "block");
@@ -70,12 +67,9 @@ function loginAjax() {
         if (b.status === "ok") {
           localStorage.setItem("localUser", JSON.stringify(b));
           Juser = JSON.parse(localStorage.localUser);
-          blockFavoritos = false;
           $(".name-user").html("¡Hola " + b.result.name + "!");
           loadAll();
-
           loadPageHome();
-
           $("#menu-logIn").css("display", "none");
           $("#menu-logOut").css("display", "block");
           $("#menu-payHistory").css("display", "block");

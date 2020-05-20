@@ -18,11 +18,13 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-vibration": {},
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-bluetooth-serial": {}
     }
   },
   "dependencies": {
-    "cordova-android": "^7.1.4",
+    "cordova-android": "^8.1.0",
+    "cordova-plugin-bluetooth-serial": "^0.4.7",
     "cordova-plugin-console": "~1.0.2",
     "cordova-plugin-device": "~1.1.1",
     "cordova-plugin-device-motion": "~1.2.0",
