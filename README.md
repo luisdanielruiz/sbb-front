@@ -1,5 +1,5 @@
 # Instalación:
-## Creacion de entorno
+## Creación de entorno
 
 * Clonar este repositorio:
 ```
