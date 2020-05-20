@@ -41,7 +41,7 @@ function addActionsConectar() {
   };
 }
 /** descomentar cuando se esten haciendo pruebas en navegador */
-statusConected = true;
+//statusConected = true;
 function connectBtl() {
   var weigthBagLocal;
 
