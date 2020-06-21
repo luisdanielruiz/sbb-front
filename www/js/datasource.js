@@ -396,7 +396,7 @@ function start(secs) {
 
 function timer() {
   if (status == 1 && sec <= retoTime) {    
-    
+   
     bluetoothSerial.read(
       function(data) {
         var isDataEmpty = !Object.keys(data).length;
@@ -408,7 +408,7 @@ function timer() {
       function(err) {
         myApp.alert("error al leer datos", "SBB");
       }
-    );   
+    );    
     setTimeout(function() {
       time++;
       min = Math.floor(time / 100 / 60);
@@ -431,8 +431,7 @@ function timer() {
   } 
   if(status == 1 && sec > retoTime) {    
     myApp.alert("Muy bien! Tomate un descanso.", "SBB");
-  }
-  
+  }  
 }
 
 function reset() {
@@ -457,7 +456,8 @@ function reset() {
     default:
       break;
   }
-  bluetoothSerial.clear(
+
+    bluetoothSerial.clear(
     console.log("data clear"),
     console.log("data clear error")
   );
