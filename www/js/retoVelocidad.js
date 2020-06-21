@@ -35,5 +35,5 @@ function addActionsRetoVelocidad() {
 
   setTimeout(function() {
     start(retoTime1);
-  }, 2000);
+  }, 1000);
 }
