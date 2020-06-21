@@ -1,5 +1,3 @@
-<!-- We don't need full layout here, becalocal-individuale this page will be parsed with Ajax-->
-<!-- Top Navbar-->
 <div class="navbar">
   <div class="navbar-inner">
     <div class="left">
@@ -17,31 +15,66 @@
 </div>
 <div class="pages">
   <!-- Page, data-page contains page name-->
-  <div data-page="instructions" class="page instructions toolbar-fixed navbar-fixed">
+  <div
+    data-page="instructions"
+    class="page instructions toolbar-fixed navbar-fixed"
+  >
     <!-- Toolbar has additional "toolbar-bottom" class -->
     <div class="toolbar toolbar-correc">
       <div class="toolbar-inner">
         <div class="left">
+          <a
+            onclick="masterBack();"
+            style="margin-top: auto;"
+            href="#"
+            class="link icon-only color-link"
+          >
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+          </a>
         </div>
+        <p class="title-view" class="">Instrucciones</p>
+        <div class="right" style="width: 44px"></div>
       </div>
     </div>
     <div class="page-content">
-      <H3 id="nameInstructions">INSTRUCCIONES DE USO Y APLICACIÓN</H3>      
-      <ul>
-          <li>
-              <p>Encienda el sensor SBB.</p> 
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+      <div class="content-block content-block-padding">
+        <div class="row">
+          <div class="list-block">
+            <div class="configText">
+              <div class="card-style">
+                <div class="card-header card-style-text">
+                  1. Encienda el sensor SBB.
+                </div>
+                <div class="card-content">
+                  <div class="card-content-inner">
+                    <img style="width: 100%;" src="img/instructions-1.jpeg" />
+                  </div>
+                </div>
               </div>
-          </li>
-
-          <li>
-              <p>Coloque el sensor SBB en la parte superior de la bolsa de boxeo.</p> 
-          </li>
-          <li>
-              <p>Encienda en bluetooth de su celular y vincule ambos dispositivos.</p>
-          </li>
-      </ul>  
+              <div class="card-style">
+                <div class="card-header card-style-text">
+                  2. Ubicar el sensor SBB en la parte superior de la bolsa.
+                </div>
+                <div class="card-content">
+                  <div class="card-content-inner">
+                    <img style="width: 100%;" src="img/instructions-2.jpg" />
+                  </div>
+                </div>
+              </div>
+              <div class="card-style">
+                <div class="card-header card-style-text">
+                  3. Active el bluetooth de su celular.
+                </div>
+                <div class="card-content">
+                  <div class="card-content-inner">
+                    <img style="width: 100%;" src="img/instructions-3.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 /******************** Home ***************************/
 function loadPageHome() {
-  $("#toolBarBottom").removeClass("hideFooter");
+  $("#toolBarBottom").css("display", "block");
+  // $("#toolBarBottom").removeClass("hideFooter");
   $("#navBarIos").removeClass("hideFooter");
   $(".navbar").attr("style", "");
   $(".page").addClass("cached");

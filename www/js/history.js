@@ -16,10 +16,7 @@ function loadPageHistory() {
 }
 
 function initializePageHistory() {
-  if (
-    userHistory[userHistory.length - 1] !=
-    $(".page:not(.cached)").attr("data-page")
-  ) {
+  if (userHistory[userHistory.length - 1] != $(".page:not(.cached)").attr("data-page")) {
     userHistory.push($(".page:not(.cached)").attr("data-page"));
   }
 
@@ -27,5 +24,10 @@ function initializePageHistory() {
 }
 
 function addActionsHistory() {
-  fetchStatistics();
+  if(localStorage.localUser != ""){
+    fetchStatistics();
+  }else{
+    myApp.alert("Debes iniciar sesion.", "SBB");
+    masterBack();
+  }
 }

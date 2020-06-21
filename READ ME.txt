@@ -1,1 +1,0 @@
-compiled apk path: C:\git\sbb-front\platforms\android\app\build\outputs\apk\debug

@@ -136,14 +136,6 @@
   text-align: center
 }
 
-.toolbar-correc .toolbar-inner p {
-  font-family: Roboto-Light!important;
-  font-size: 18px;
-  color: #aaa;
-  letter-spacing: 0;
-  text-align: center
-}
-
 #list {
   margin-left: 10px
 }
@@ -162,10 +154,6 @@
 html.pixel-ratio-2 .toolbar:before {
   z-index: 0!important;
   background-color: transparent!important
-}
-
-.content-block {
-  margin: 0
 }
 
 .content-block-title {
@@ -239,12 +227,6 @@ html.pixel-ratio-2 .toolbar:before {
   font-size: 14px
 }
 
-.register .page-content {
-  background: #f7f7f7;
-  margin-top: 20px;
-  font-family: Roboto-Light
-}
-
 .navbar-through .page-content, .register .navbar-fixed .page-content {
   padding-top: 44px
 }
@@ -285,20 +267,13 @@ html.pixel-ratio-2 .toolbar:before {
 }
 
 .register .page-content {
-  padding-bottom: 0
+  margin-top: 44px !important;
+  padding: 0 !important;
+  font-family: Roboto-Light
 }
 
 .register .content-block-padding {
   margin-top: -5px
-}
-
-#nameMyaccount {
-  font-family: Roboto-Light!important;
-  font-size: 18px;
-  color: #aaa;
-  letter-spacing: 0;
-  text-align: center;
-  margin: 0 auto 0 52px
 }
 
 .myAccount .list-block {
@@ -327,27 +302,6 @@ html.pixel-ratio-2 .toolbar:before {
   left: 15px
 }
 
-.myAccount .toolbar-inner p {
-  position: absolute;
-  margin-left: -32px!important;
-  left: 50%;
-  color: #aaa;
-  font-size: 19px;
-  font-family: Roboto-Medium;
-  padding-left: 0!important;
-  margin-top: 0
-}
-
-#myAccount {
-  font-family: Roboto-Light!important;
-  font-size: 31px;
-  color: #aaa;
-  letter-spacing: 0;
-  text-align: center;
-  margin-left: -10%;
-  margin-bottom: 10%
-}
-
 .avatarMyAccount {
   position: absolute;
   left: 50%;
@@ -369,14 +323,11 @@ html.pixel-ratio-2 .toolbar:before {
   position: absolute
 }
 
-.name-user {
-  font-family: Roboto-Light;
+.title-view {
+  font-family: Roboto;
   font-size: 24px;
   color: #aaa;
-  letter-spacing: 0;
-  line-height: 24px;
-  margin-left: 101px;
-  padding-top: 20px
+  margin: 0 auto;
 }
 
 #contentUserData {
@@ -394,7 +345,7 @@ html.pixel-ratio-2 .toolbar:before {
 
 .list-block-correc .item-title {
   font-family: Roboto-Light;
-  font-size: 17px;
+  font-size: 22px;
   color: #aaa;
   letter-spacing: 0;
   line-height: 51px
@@ -407,8 +358,13 @@ html.pixel-ratio-2 .toolbar:before {
   height: 22px
 }
 
-#nameContact {
-  margin: 0 auto 0 52px
+.name-user {
+  font-family: Roboto-Light;
+  color: #aaa;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-left: 101px;
+  padding-top: 20px
 }
 
 #textContact {
@@ -487,9 +443,7 @@ html.pixel-ratio-2 .toolbar:before {
   z-index: 999;
   font-size: 18px
 }
-#nameInstructions {
-  margin: 0 auto 0 12px
-}
+
 .modal-content {
   margin: auto;
   display: block;
@@ -548,7 +502,7 @@ html.pixel-ratio-2 .toolbar:before {
 .text-login {
   position: absolute;
   width: 100%;
-  top: 15%
+  top: 25%
 }
 
 #fbLogin {
@@ -620,15 +574,25 @@ html.pixel-ratio-2 .toolbar:before {
 }
 
 .recovery img {
-  width: 300px
+  width: 45%;
+  margin-top: 20%;
 }
 
-.imgChallengue {
+.card-style {
+  background: #ffffff;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.2);
+  height: auto;
+  text-align: center;
+  border-radius: 8px;
+  margin: 15px 10px;
+}
+
+.card-style-img {
   margin-top: 15px;
   height: 149px
 }
 
-.textChallengue {
+.card-style-text {
   font-family: Helvetica;
   font-size: 24px;
   color: #aaa;
@@ -637,23 +601,30 @@ html.pixel-ratio-2 .toolbar:before {
   margin-top: 0
 }
 
-.nameHome {
-  font-family: Roboto-Light!important;
-  font-size: 25px!important;
-  color: #aaa;
+.title-challenge {
+  font-family: Helvetica;
+  font-size: 24px;
+  color: red;
   letter-spacing: 0;
   text-align: center;
-  position: static;
-  margin: 0 auto
+  margin: 15px 10px
 }
 
-.nameConectar {
-  font-family: Roboto-Light!important;
-  font-size: 25px!important;
-  color: #aaa;
+.img-challenge {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  height: 120px;
+}
+
+.text-challenge {
+  font-family: Helvetica;
+  font-size: 24px;
+  color: #000;
   letter-spacing: 0;
   text-align: center;
-  margin: 0 auto 0 52px
+  margin-top: 10px;
+  margin-left: 15%;
 }
 
 .textConectar {
@@ -689,10 +660,6 @@ html.pixel-ratio-2 .toolbar:before {
   top: 4px
 }
 
-#nameHistory {
-  margin: 0 auto 0 52px
-}
-
 .chartHistory {
   width: -webkit-fill-available;
   margin-left: 5px;
@@ -705,15 +672,6 @@ html.pixel-ratio-2 .toolbar:before {
   margin: 15px auto;
   border-radius: 15px;
   background: #fff
-}
-
-.challengue {
-  background: #fff;
-  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, .2);
-  height: auto;
-  text-align: center;
-  border-radius: 8px;
-  margin: 15px 10px
 }
 
 .configText {
@@ -744,4 +702,44 @@ html.pixel-ratio-2 .toolbar:before {
 
 .footer-menu-text {
   padding: 0 0 0 15px
+}
+
+.reto {
+  text-align: center;
+}
+
+.img-reto {
+  width: 100%;
+  height: 100%;
+}
+
+.text-reto {
+  font-family: Roboto;
+  font-size: 30px;
+  margin: 0;
+}
+
+.data-reto {
+  display: flex;
+  padding: 15px 15px 0;
+  align-items: center;
+}
+
+.icon-reto {
+  margin-right: 30px;
+  height: 65px;
+}
+
+.labelSbb {
+  font-family: Roboto-LightItalic!important;
+  color: red;
+}
+
+.imgRegister {
+  width: 45%;
+}
+
+#mailRecovery {
+  font-family: Roboto-Regular;
+  font-size: 15px;
 }

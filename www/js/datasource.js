@@ -408,7 +408,8 @@ function timer() {
       function(err) {
         myApp.alert("error al leer datos", "SBB");
       }
-    );    
+    ); 
+    
     setTimeout(function() {
       time++;
       min = Math.floor(time / 100 / 60);
@@ -457,7 +458,7 @@ function reset() {
       break;
   }
 
-    bluetoothSerial.clear(
+  bluetoothSerial.clear(
     console.log("data clear"),
     console.log("data clear error")
   );
