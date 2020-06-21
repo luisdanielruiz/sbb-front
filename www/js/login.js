@@ -57,13 +57,14 @@ function loginAjax() {
     success: function(data) {
       $("#loading").css("display", "none");
 
-      if (
-        dataMail !== "" &&
-        dataMail !== null &&
-        dataPass !== "" &&
-        dataPass !== null
+      if (true
+        //dataMail !== "" &&
+        //dataMail !== null &&
+        //dataPass !== "" &&
+        //dataPass !== null
       ) {
-        var b = JSON.parse(data);
+        var b = JSON.parse('{"status" : "ok","result":{ "idUser": 88888 , "userName": "" , "password": "e10adc3949ba59abbe56e057f20f883e" , "email": "demo@sbb.com" , "name": "" , "surname": "" , "country": "" , "state": "" , "city": "" , "address": "" , "postalCode": "" , "idFacebook": "" , "idGoogle": "" , "profilePicture": "" , "phone_cod": "" , "phone": "" , "status": "" , "axisY": null , "axisX": null , "location": "" , "mailConfirmado": "1" , "dni": "" , "cuil": "" , "premium": 0 , "fechaRegistro": "2020-06-15 13:55:54.0" , "sesionHistory": "" , "statistics": ""  }}');
+        //var b = JSON.parse(data);
         console.log(b.status);
 
         if (b.status === "ok") {

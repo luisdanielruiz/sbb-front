@@ -1,4 +1,5 @@
 /******************** Libre ***************************/
+var retoTimeLibre = 2160
 function loadPageLibre() {
   $(".navbar").attr("style", "");
   $(".page").addClass("cached");
@@ -25,6 +26,9 @@ function initializePageLibre() {
 function addActionsLibre() {
   try {
     reset();
+    setTimeout(function() {
+      start(retoTimeLibre);
+    }, 1000);    
     serializeDataSensor();
   } catch (err) {
     myApp.alert(err);

@@ -6,10 +6,7 @@ var dataSensor = {
   data: []
 };
 var dataSensorHistory = [];
-var idUserGlobal = JSON.parse(localStorage.getItem("localUser")).result.idUser;
-var dataPrincipiante = [];
-var dataProfesional = [];
-var dataAmateur = [];
+var listStats = null;
 
 function loadVelocidadRetos() {
   $(".feedVelocidad")
@@ -86,10 +83,11 @@ function loadAll() {
 }
 
 function fetchStatistics() {
+  myApp.showPreloader();
   $.ajax({
     type: "GET",
     url: appServices.SBBReadDataStatistics,
-    data: "idUser=" + idUserGlobal,
+    data: "idUser=" + Juser.result.idUser,
     contentType: "application/json",
     sync: false,
     dataType: "JSON",
@@ -97,47 +95,84 @@ function fetchStatistics() {
       var parsedData = JSON.parse(data);
       if (parsedData.status === "ok") {
         listStats = parsedData.result;
-        for (var i = 0; i < listStats.length; i++) {
-          if (listStats[i].tipoChallengue === "Fuerza") {
-            if (listStats[i].challengue === "Principiante") {
-              var arr = JSON.parse(listStats[i].hits);
-              dataPrincipiante = dataPrincipiante.concat(arr);
-            } else if (listStats[i].challengue === "Profesional") {
-              var arr = JSON.parse(listStats[i].hits);
-              dataProfesional = dataProfesional.concat(arr);
-            } else if (listStats[i].challengue === "Amateur") {
-              var arr = JSON.parse(listStats[i].hits);
-              dataAmateur = dataAmateur.concat(arr);
-            }
-          }
-        }
-        loadStatistics(dataPrincipiante, dataProfesional, dataAmateur);
+        serializeStats(listStats);
+        myApp.hidePreloader();
       } else {
-        myApp.alert("Aun no tienes información para mostrar", "SBB");
+        myApp.hidePreloader();
+        myApp.alert("No se encontraron datos.", "SBB");
       }
     },
     error: function(data) {
-      myApp.alert("Problemas en la conexión a internet", "SBB");
+      myApp.hidePreloader();
+      myApp.alert("Problemas en la conexión a internet.", "SBB");
     }
   });
 }
 
+function serializeStats(stats) {
+  var dataPrincipiante = [];
+  var dataProfesional = [];
+  var dataAmateur = [];
+  var dataSerialized = {
+    fuerza: {
+      principiante: {
+        hits: []
+      },
+      amateur: {
+        hits: []
+      },
+      profesional: {
+        hits: []
+      }
+    }
+  };
+
+  stats.forEach(listItem => {
+    if (listItem.challengue === "Principiante") {
+      var arr = JSON.parse(listItem.hits);
+      dataSerialized.fuerza.principiante.hits = [
+        ...dataSerialized.fuerza.principiante.hits,
+        ...arr
+      ];
+      dataPrincipiante = dataSerialized.fuerza.principiante.hits;
+    }
+    if (listItem.challengue === "Amateur") {
+      var arr = JSON.parse(listItem.hits);
+      dataSerialized.fuerza.amateur.hits = [
+        ...dataSerialized.fuerza.amateur.hits,
+        ...arr
+      ];
+      dataAmateur = dataSerialized.fuerza.amateur.hits;
+    }
+    if (listItem.challengue === "Profesional") {
+      var arr = JSON.parse(listItem.hits);
+      dataSerialized.fuerza.profesional.hits = [
+        ...dataSerialized.fuerza.profesional.hits,
+        ...arr
+      ];
+      dataProfesional = dataSerialized.fuerza.profesional.hits;
+    }
+  });
+
+  loadStatistics(dataPrincipiante, dataProfesional, dataAmateur);
+}
+
 function loadStatistics(dataPrincipiante, dataProfesional, dataAmateur) {
   var maxHitPrincipiante = Math.max(...dataPrincipiante);
-  var minHitPrincipiante = Math.min(...dataPrincipiante);
+  var mediaHitPrincipiante = getMediafromArr(dataPrincipiante);
   var totalHitsPrincipiante = dataPrincipiante.length;
 
-  var maxHitProfesional = Math.max(...dataProfesional);
-  var minHitProfesional = Math.min(...dataProfesional);
-  var totalHitsProfesional = dataProfesional.length;
-
   var maxHitAmateur = Math.max(...dataAmateur);
-  var minHitAmateur = Math.min(...dataAmateur);
+  var mediaHitAmateur = getMediafromArr(dataAmateur);
   var totalHitsAmateur = dataAmateur.length;
+
+  var maxHitProfesional = Math.max(...dataProfesional);
+  var mediaHitProfesional = getMediafromArr(dataProfesional);
+  var totalHitsProfesional = dataProfesional.length;
 
   var ctx = $("#myChart");
   var myChart = new Chart(ctx, {
-    type: "bar",
+    type: "line",
     data: {
       labels: ["Principiante", "Amateur", "Profesional"],
       datasets: [
@@ -187,15 +222,29 @@ function loadStatistics(dataPrincipiante, dataProfesional, dataAmateur) {
 
   var ctx2 = $("#myChart2");
   var myChart2 = new Chart(ctx2, {
-    type: "line",
+    type: "bar",
     data: {
       labels: ["Principiante", "Amateur", "Profesional"],
       datasets: [
         {
-          label: "Golpe menos fuerte",
-          data: [minHitPrincipiante, minHitAmateur, minHitProfesional],
-          backgroundColor: ["rgba(153, 102, 255, 0.2)"],
-          borderColor: ["rgba(153, 102, 255, 1)"],
+          label: "Golpe promedio",
+          data: [mediaHitPrincipiante, mediaHitAmateur, mediaHitProfesional],
+          backgroundColor: [
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)"
+          ],
+          borderColor: [
+            "rgba(255,99,132,1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+            "rgba(255, 159, 64, 1)"
+          ],
           borderWidth: 1
         }
       ]
@@ -205,8 +254,7 @@ function loadStatistics(dataPrincipiante, dataProfesional, dataAmateur) {
         yAxes: [
           {
             ticks: {
-              beginAtZero: true,
-              max: 100
+              beginAtZero: true
             }
           }
         ]
@@ -256,8 +304,7 @@ function loadStatistics(dataPrincipiante, dataProfesional, dataAmateur) {
         yAxes: [
           {
             ticks: {
-              beginAtZero: true,
-              max: 800
+              beginAtZero: true
             }
           }
         ]
@@ -280,7 +327,7 @@ function loadStatistics(dataPrincipiante, dataProfesional, dataAmateur) {
       labels: ["Principiante", "Amateur", "Profesional"],
       datasets: [
         {
-          label: "# of Votes",
+          label: "# de golpes",
           data: [12, 19, 13],
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
@@ -348,8 +395,9 @@ function start(secs) {
 // }
 
 function timer() {
-  if (status == 1 && sec <= retoTime) {
-    bluetoothSerial.read(
+  if (status == 1 && sec <= retoTime) {    
+    //FROSI - comentar para probar la conexión sin el sensor
+    /*bluetoothSerial.read(
       function(data) {
         var isDataEmpty = !Object.keys(data).length;
         if (!isDataEmpty) {
@@ -360,7 +408,7 @@ function timer() {
       function(err) {
         myApp.alert("error al leer datos", "SBB");
       }
-    );
+    );*/    
     setTimeout(function() {
       time++;
       min = Math.floor(time / 100 / 60);
@@ -376,35 +424,85 @@ function timer() {
       if (sec < 10) {
         sec = "0" + sec;
       }
-
-      try {
-        document.getElementById("timerLabel").innerHTML =
-          min + ":" + sec + ":" + mSec;
-      } catch (e) {}
-
-      try {
-        document.getElementById("timerLabel2").innerHTML =
-          min + ":" + sec + ":" + mSec;
-      } catch (e) {}
+      // Update UI
+      updateUI();
       timer();
     }, 10);
+  } 
+  if(status == 1 && sec > retoTime) {    
+    myApp.alert("Muy bien! Tomate un descanso.", "SBB");
   }
+  
 }
 
 function reset() {
   status = 0;
   time = 0;
-  try {
-    document.getElementById("timerLabel").innerHTML = "00:00:00";
-  } catch (e) {}
-  try {
-    document.getElementById("timerLabel2").innerHTML = "00:00:00";
-  } catch (e) {}
-  bluetoothSerial.clear(
-    console.log("data clear"),
+  sec = 0;
+  switch (userHistory[userHistory.length - 1]) {
+    case "libre":
+      try {
+        document.getElementById("labelTimerLibre").innerHTML = "00:00:00";
+      } catch (e) {
+        myApp.alert(e, "SBB");
+      }
+      break;
+    case "retoVelocidad":
+      try {
+        document.getElementById("labelTimerVelocidad").innerHTML = "00:00:00";
+      } catch (e) {
+        myApp.alert(e, "SBB");
+      }
+      break;
+    default:
+      break;
+  }
+//FROSI - comentar para probar la conexión sin el sensor
+  /*bluetoothSerial.clear(
+  console.log("data clear"),
     console.log("data clear error")
   );
-  dataSensor.data = [];
+  dataSensor.data = [];*/
 }
 
+function getMediafromArr(arr) {
+  var avg = arr.reduce(function(a, b) {
+    return a + b;
+  });
+  return avg / arr.length;
+}
 
+function updateUI() {
+  switch (userHistory[userHistory.length - 1]) {
+    case "libre":
+      try {
+        document.getElementById("labelGolpeLibre").innerHTML =
+          dataSensor.data.length;
+      } catch (e) {
+        myApp.alert(e, "SBB");
+      }
+      try {
+        document.getElementById("labelTimerLibre").innerHTML =
+          min + ":" + sec + ":" + mSec;
+      } catch (e) {
+        myApp.alert(e, "SBB");
+      }
+      break;
+    case "retoVelocidad":
+      try {
+        document.getElementById("labelGolpeVelocidad").innerHTML =
+          dataSensor.data.length;
+      } catch (e) {
+        myApp.alert(e, "SBB");
+      }
+      try {
+        document.getElementById("labelTimerVelocidad").innerHTML =
+          min + ":" + sec + ":" + mSec;
+      } catch (e) {
+        myApp.alert(e, "SBB");
+      }
+      break;
+    default:
+      break;
+  }
+}
