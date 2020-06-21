@@ -379,7 +379,7 @@ var mSec;
 var retoTime;
 
 function start(secs) {
-  status = 1;
+  status = 1;  
   retoTime = secs - 1;
   timer();
 }
@@ -396,8 +396,8 @@ function start(secs) {
 
 function timer() {
   if (status == 1 && sec <= retoTime) {    
-    //FROSI - comentar para probar la conexión sin el sensor
-    /*bluetoothSerial.read(
+    
+    bluetoothSerial.read(
       function(data) {
         var isDataEmpty = !Object.keys(data).length;
         if (!isDataEmpty) {
@@ -408,7 +408,7 @@ function timer() {
       function(err) {
         myApp.alert("error al leer datos", "SBB");
       }
-    );*/    
+    );   
     setTimeout(function() {
       time++;
       min = Math.floor(time / 100 / 60);
@@ -457,12 +457,11 @@ function reset() {
     default:
       break;
   }
-//FROSI - comentar para probar la conexión sin el sensor
-  /*bluetoothSerial.clear(
-  console.log("data clear"),
+  bluetoothSerial.clear(
+    console.log("data clear"),
     console.log("data clear error")
   );
-  dataSensor.data = [];*/
+  dataSensor.data = [];
 }
 
 function getMediafromArr(arr) {
