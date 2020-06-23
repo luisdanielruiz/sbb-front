@@ -22,4 +22,13 @@ function initializePageRetoFuerza() {
   addActionsRetoFuerza();
 }
 
-function addActionsRetoFuerza() {}
+function addActionsRetoFuerza() {
+  try {
+    reset();
+    setTimeout(function() {
+      start(5, "Profesional");
+    }, 1000);
+  } catch (e) {
+    myApp.alert(e, "SBB");
+  }
+}

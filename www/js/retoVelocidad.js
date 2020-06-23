@@ -1,9 +1,9 @@
 /******************** Reto Velocidad ***************************/
 var retoTime1;
+var retoVelocidadChallenge;
 
 function loadPageRetoVelocidad(retoTime) {
   retoTime1 = retoTime;
-
   $(".navbar").attr("style", "");
   $(".page").addClass("cached");
 
@@ -29,11 +29,10 @@ function initializePageRetoVelocidad() {
 function addActionsRetoVelocidad() {
   try {
     reset();
+    setTimeout(function() {
+      start(retoTime1, "Profesional");
+    }, 1000);
   } catch (e) {
     myApp.alert(e, "SBB");
   }
-
-  setTimeout(function() {
-    start(retoTime1);
-  }, 2000);
 }
