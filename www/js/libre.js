@@ -28,54 +28,7 @@ function addActionsLibre() {
     reset();
     setTimeout(function() {
       start(retoTimeLibre);
-    }, 1000);    
-    serializeDataSensor();
-  } catch (e) {
-    myApp.alert(e, "SBB");
-  }
-}
-
-function serializeDataSensor() {
-  try {
-    var localDataSensor = JSON.parse(localStorage.getItem("dataSensors"));
-    if (localDataSensor) {
-      parseDataSensor(localDataSensor);
-    }
-  } catch (e) {
-    myApp.alert(e, "SBB");
-  }
-}
-
-function parseDataSensor(arr) {
-  var dataHits;
-  var dataFinal;
-  try {
-    dataHits = arr.data.join().split(",");
-    dataFinal = dataHits.map(item => JSON.parse(item));
-  } catch (e) {
-    myApp.alert(e, "SBB");
-  }
-  try {
-    $.ajax({
-      type: "GET",
-      url: appServices.SBBWriteStatistics,
-      data:
-        "user=" +
-        idUserGlobal +
-        "&challengue=Principiante" +
-        "&tipoChallengue=Fuerza" +
-        "&hits=[" + dataFinal + "]",
-      contentType: "application/json",
-      sync: false,
-      dataType: "JSON",
-      success: function(data) {
-        $("#loading").css("display", "none");
-      },
-      error: function(data) {
-        $("#loading").remove();
-        myApp.alert("Problemas en la conexión a internet", "SBB");
-      }
-    });
+    }, 1000);
   } catch (e) {
     myApp.alert(e, "SBB");
   }

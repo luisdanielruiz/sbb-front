@@ -3,7 +3,7 @@ var listForRetos = null;
 var statusConected = false;
 var dataSensor = {
   sensor: "acelerometer",
-  data: []
+  data: [],
 };
 var dataSensorHistory = [];
 var listStats = null;
@@ -377,10 +377,12 @@ var min;
 var sec = 0;
 var mSec;
 var retoTime;
+var challengeName;
 
-function start(secs) {
-  status = 1;  
+function start(secs, retoChallengeName) {
+  status = 1;
   retoTime = secs - 1;
+  challengeName = retoChallengeName;
   timer();
 }
 
@@ -395,7 +397,7 @@ function start(secs) {
 // }
 
 function timer() {
-  if (status == 1 && sec <= retoTime) {    
+  if (status == 1 && sec <= retoTime) {
     bluetoothSerial.read(
       function(data) {
         var isDataEmpty = !Object.keys(data).length;
@@ -427,10 +429,11 @@ function timer() {
       updateUI();
       timer();
     }, 10);
-  } 
-  if(status == 1 && sec > retoTime) {    
-    myApp.alert("Muy bien! Tomate un descanso.", "SBB");
-  }  
+  }
+  if(status == 1 && sec > retoTime) {
+    sendDataToServer();
+    myApp.alert("Reto terminado", "SBB");
+  }
 }
 
 function reset() {
@@ -484,6 +487,12 @@ function updateUI() {
       } catch (e) {
         myApp.alert(e, "SBB");
       }
+      try {
+          document.getElementById("labelFuerzaLibre").innerHTML =
+          dataSensor.data[dataSensor.data.length] + "Kg/f";
+      } catch (e) {
+        myApp.alert(e, "SBB");
+      }
       break;
     case "retoVelocidad":
       try {
@@ -499,7 +508,95 @@ function updateUI() {
         myApp.alert(e, "SBB");
       }
       break;
+    case "retoFuerza":
+      try {
+        document.getElementById("labelGolpeFuerza").innerHTML =
+          dataSensor.data.length;
+      } catch (e) {
+        myApp.alert(e, "SBB");
+      }
+      try {
+        document.getElementById("labelFuerza").innerHTML =
+        dataSensor.data.length ? dataSensor.data + "Kg/f" : "000 Kg/f ";
+      } catch (e) {
+        myApp.alert(e, "SBB");
+      }
+      break;
     default:
       break;
+  }
+}
+
+function sendDataToServer () {
+  switch(userHistory[userHistory.length - 1]) {
+    case "retoVelocidad":
+      try {
+        serializeDataSensorVel(challengeName, "Velocidad");
+      } catch (e) {
+        myApp.alert(e, "SBB");
+      }
+    break;
+    case "retoFuerza":
+      try {
+        serializeDataSensorVel(challengeName, "Fuerza");
+      } catch (e) {
+        myApp.alert(e, "SBB");
+      }
+    break;
+    case "libre":
+      try {
+        serializeDataSensorVel("Libre", "Libre");
+      } catch (e) {
+        myApp.alert(e, "SBB");
+      }
+    break;
+    default:
+      break;
+  }
+}
+
+function serializeDataSensorVel(challenge, tipoChallenge) {
+  try {
+    var localDataSensor = JSON.parse(localStorage.getItem("dataSensors"));
+    if (localDataSensor) {
+      parseDataSensorVel(localDataSensor, challenge, tipoChallenge);
+    }
+  } catch (e) {
+    myApp.alert(e, "SBB");
+  }
+}
+
+function parseDataSensorVel(sensorData, challenge, tipoChallenge) {
+  var dataHits;
+  var dataFinal;
+  try {
+    dataHits = sensorData.data.join().split(",");
+    dataFinal = dataHits.map(item => JSON.parse(item));
+  } catch (e) {
+    myApp.alert(e, "SBB");
+  }
+  try {
+    $.ajax({
+      type: "GET",
+      url: appServices.SBBWriteStatistics,
+      data:
+        "user=" + Juser.result.idUser +
+        "&challengue=" + challenge +
+        "&tipoChallengue=" + tipoChallenge +
+        "&hits=[" + dataFinal + "]" +
+        "&time=" + retoTime,
+      contentType: "application/json",
+      sync: false,
+      dataType: "JSON",
+      success: function(data) {
+        $("#loading").css("display", "none");
+      },
+      error: function(data) {
+        $("#loading").remove();
+        myApp.alert("Problemas en la conexión a internet", "SBB");
+      }
+    });
+  } catch (e) {
+    myApp.alert(e, "SBB");
   }
 }
