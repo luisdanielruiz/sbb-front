@@ -1,4 +1,4 @@
-<div onclick="loadPageRetoFuerza();" id="retoFor{{idChallengue}}" class="card-style">
+<div onclick="loadPageRetoFuerza({{time}},'{{nombre}}');" id="retoFor{{idChallengue}}" class="card-style">
   <div class="row">
       <div class="col-25">
           <img src="img/homeImg3.png" alt="" class="img-challenge">
@@ -6,8 +6,9 @@
       <div class="col-75">
           <p class="title-challenge">{{nombre}}</p>
           <p class="text-challenge">
-              Fuerza golpe:<br>
-              {{hits}} Kg/f
+              Fuerza golpe: <br>
+              {{hits}} Kg/f <br>
+              tiempo: {{time}} seg
           </p>
       </div>
   </div>

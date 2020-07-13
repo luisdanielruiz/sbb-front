@@ -1,5 +1,5 @@
 var urlServer="https://sbb-app.host";
-//var urlServer = "http://localhost:8085";
+// var urlServer = "http://localhost:8085";
 
 var appServices = {
  SBBListarRetos: urlServer+"/SBB/SBBListarChallenges",

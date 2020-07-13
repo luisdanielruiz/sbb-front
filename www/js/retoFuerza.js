@@ -1,5 +1,11 @@
 /******************** Reto Fuerza ***************************/
-function loadPageRetoFuerza() {
+var categoriaFuerza;
+var timeFuerza;
+
+function loadPageRetoFuerza(retoTime,categoriaReto) {
+  console.log("************ --> ", categoriaReto);
+  categoriaFuerza = categoriaReto;
+  timeFuerza = retoTime;
   $(".navbar").attr("style", "");
   $(".page").addClass("cached");
 
@@ -26,7 +32,7 @@ function addActionsRetoFuerza() {
   try {
     reset();
     setTimeout(function() {
-      start(5, "Profesional");
+      start(timeFuerza, categoriaFuerza);
     }, 1000);
   } catch (e) {
     myApp.alert(e, "SBB");

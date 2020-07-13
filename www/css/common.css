@@ -38,9 +38,8 @@ iframe {
   padding-top: 88px !important;
 }
 .content-block-padding {
-  /*us / */
-  /*margin: 44px 0;*/
-  padding: 0px;
+  margin: 0;
+  padding: 0 15px;
 }
 .panel {
   background-color: #f7f7f8;

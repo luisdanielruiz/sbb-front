@@ -1,5 +1,5 @@
 /******************** Libre ***************************/
-var retoTimeLibre = 2160
+var retoTimeLibre = 2160;
 function loadPageLibre() {
   $(".navbar").attr("style", "");
   $(".page").addClass("cached");
@@ -27,7 +27,7 @@ function addActionsLibre() {
   try {
     reset();
     setTimeout(function() {
-      start(retoTimeLibre);
+      start(retoTimeLibre, "Libre");
     }, 1000);
   } catch (e) {
     myApp.alert(e, "SBB");

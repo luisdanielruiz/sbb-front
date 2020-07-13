@@ -500,9 +500,7 @@ html.pixel-ratio-2 .toolbar:before {
 }
 
 .text-login {
-  position: absolute;
-  width: 100%;
-  top: 25%
+
 }
 
 #fbLogin {
@@ -742,4 +740,9 @@ html.pixel-ratio-2 .toolbar:before {
 #mailRecovery {
   font-family: Roboto-Regular;
   font-size: 15px;
+}
+
+.chartHistory-title {
+  align-items: center;
+  display: flex;
 }

@@ -3,7 +3,7 @@ var listForRetos = null;
 var statusConected = false;
 var dataSensor = {
   sensor: "acelerometer",
-  data: [],
+  data: []
 };
 var dataSensorHistory = [];
 var listStats = null;
@@ -110,95 +110,177 @@ function fetchStatistics() {
 }
 
 function serializeStats(stats) {
-  var dataPrincipiante = [];
-  var dataProfesional = [];
-  var dataAmateur = [];
+  var dataFuerzaPrincipiante = [];
+  var dataVelocidadPrincipiante = [];
+  var dataFuerzaProfesional = [];
+  var dataVelocidadProfesional = [];
+  var dataFuerzaAmateur = [];
+  var dataVelocidadAmateur = [];
+  var dataFuerzaLibre = [];
+  var dataVelocidadLibre = [];
   var dataSerialized = {
     fuerza: {
       principiante: {
-        hits: []
+        hits: [],
       },
       amateur: {
-        hits: []
+        hits: [],
       },
       profesional: {
-        hits: []
+        hits: [],
       }
+    },
+    libre: {
+      hits: [],
     }
   };
 
   stats.forEach(listItem => {
     if (listItem.challengue === "Principiante") {
       var arr = JSON.parse(listItem.hits);
+      var velocidadItem = arr.length / parseInt(listItem.time);
       dataSerialized.fuerza.principiante.hits = [
         ...dataSerialized.fuerza.principiante.hits,
         ...arr
       ];
-      dataPrincipiante = dataSerialized.fuerza.principiante.hits;
+      dataVelocidadPrincipiante.push(velocidadItem);
+      dataFuerzaPrincipiante = dataSerialized.fuerza.principiante.hits;
     }
     if (listItem.challengue === "Amateur") {
       var arr = JSON.parse(listItem.hits);
+      var velocidadItem = arr.length / parseInt(listItem.time);
       dataSerialized.fuerza.amateur.hits = [
         ...dataSerialized.fuerza.amateur.hits,
         ...arr
       ];
-      dataAmateur = dataSerialized.fuerza.amateur.hits;
+      dataVelocidadAmateur.push(velocidadItem);
+      dataFuerzaAmateur = dataSerialized.fuerza.amateur.hits;
     }
     if (listItem.challengue === "Profesional") {
       var arr = JSON.parse(listItem.hits);
+      var velocidadItem = arr.length / parseInt(listItem.time);
       dataSerialized.fuerza.profesional.hits = [
         ...dataSerialized.fuerza.profesional.hits,
         ...arr
       ];
-      dataProfesional = dataSerialized.fuerza.profesional.hits;
+      dataVelocidadProfesional.push(velocidadItem);
+      dataFuerzaProfesional = dataSerialized.fuerza.profesional.hits;
+    }
+    if (listItem.challengue === "Libre") {
+      var arr = JSON.parse(listItem.hits);
+      var velocidadItem = arr.length / parseInt(listItem.time);
+      dataSerialized.libre.hits = [
+        ...dataSerialized.libre.hits, 
+        ...arr
+      ];
+      dataVelocidadLibre.push(velocidadItem);
+      dataFuerzaLibre = dataSerialized.libre.hits;
     }
   });
 
-  loadStatistics(dataPrincipiante, dataProfesional, dataAmateur);
+  loadStatistics(dataFuerzaPrincipiante, dataVelocidadPrincipiante, dataFuerzaAmateur, dataVelocidadAmateur,  dataFuerzaProfesional, dataVelocidadProfesional, dataFuerzaLibre, dataVelocidadLibre);
 }
 
-function loadStatistics(dataPrincipiante, dataProfesional, dataAmateur) {
-  var maxHitPrincipiante = Math.max(...dataPrincipiante);
-  var mediaHitPrincipiante = getMediafromArr(dataPrincipiante);
-  var totalHitsPrincipiante = dataPrincipiante.length;
+function loadStatistics(
+  dataFuerzaPrincipiante,
+  dataVelocidadPrincipiante,
+  dataFuerzaAmateur,
+  dataVelocidadAmateur,
+  dataFuerzaProfesional,
+  dataVelocidadProfesional,
+  dataFuerzaLibre,
+  dataVelocidadLibre
+) {
+  if (dataFuerzaPrincipiante && dataFuerzaPrincipiante.length > 0) {
+    var maxHitPrincipiante = Math.max(...dataFuerzaPrincipiante);
+    var minHitPrincipiante = Math.min(...dataFuerzaPrincipiante);
+    var mediaHitPrincipiante = getMediafromArr(dataFuerzaPrincipiante);
+    var totalHitsPrincipiante = dataFuerzaPrincipiante.length;
+    var mediaVelocidadPrincipiante = getMediafromArr(dataVelocidadPrincipiante);
+  } else {
+    var maxHitPrincipiante = 0;
+    var minHitPrincipiante = 0;
+    var mediaHitPrincipiante = 0;
+    var totalHitsPrincipiante = 0;
+    var mediaVelocidadPrincipiante = 0;
+  }
 
-  var maxHitAmateur = Math.max(...dataAmateur);
-  var mediaHitAmateur = getMediafromArr(dataAmateur);
-  var totalHitsAmateur = dataAmateur.length;
+  if (dataFuerzaAmateur && dataFuerzaAmateur.length > 0) {
+    var maxHitAmateur = Math.max(...dataFuerzaAmateur);
+    var minHitAmateur = Math.min(...dataFuerzaAmateur);
+    var mediaHitAmateur = getMediafromArr(dataFuerzaAmateur);
+    var totalHitsAmateur = dataFuerzaAmateur.length;
+    var mediaVelocidadAmateur = getMediafromArr(dataVelocidadAmateur);
+  } else {
+    var maxHitAmateur = 0;
+    var minHitAmateur = 0;
+    var mediaHitAmateur = 0;
+    var totalHitsAmateur = 0;
+    var mediaVelocidadAmateur = 0;
+  }
 
-  var maxHitProfesional = Math.max(...dataProfesional);
-  var mediaHitProfesional = getMediafromArr(dataProfesional);
-  var totalHitsProfesional = dataProfesional.length;
+  if (dataFuerzaAmateur && dataFuerzaAmateur.length > 0) {
+    var maxHitProfesional = Math.max(...dataFuerzaProfesional);
+    var minHitProfesional = Math.min(...dataFuerzaProfesional);
+    var mediaHitProfesional = getMediafromArr(dataFuerzaProfesional);
+    var totalHitsProfesional = dataFuerzaProfesional.length;
+    var mediaVelocidadProfesional = getMediafromArr(dataVelocidadProfesional);
+  } else {
+    var maxHitProfesional = 0;
+    var minHitProfesional = 0;
+    var mediaHitProfesional = 0;
+    var totalHitsProfesional = 0;
+    var mediaVelocidadProfesional = 0;
+  }
+
+  if (dataFuerzaLibre && dataFuerzaLibre.length > 0) {
+    var maxHitLibre = Math.max(...dataFuerzaLibre);
+    var minHitLibre = Math.min(...dataFuerzaLibre);
+    var mediaHitLibre = getMediafromArr(dataFuerzaLibre);
+    var totalHitsLibre = dataFuerzaLibre.length;
+    var mediaVelocidadLibre = getMediafromArr(dataVelocidadLibre);
+  } else {
+    var maxHitLibre = 0;
+    var minHitLibre = 0;
+    var mediaHitLibre = 0;
+    var totalHitsLibre = 0;
+    var mediaVelocidadLibre = 0;
+  }
+
+  var maxHitData = {
+    labels: ["Principiante", "Amateur", "Profesional", "Libre"],
+    datasets: [
+      {
+        label: "Maximo",
+        data: [
+          maxHitPrincipiante,
+          maxHitAmateur,
+          maxHitProfesional,
+          maxHitLibre
+        ],
+        lineTension: 0.3,
+        backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+        borderColor: ["rgba(255,99,132,1)"],
+      },
+      {
+        label: "Minimo",
+        data: [
+          minHitPrincipiante,
+          minHitAmateur,
+          minHitProfesional,
+          minHitLibre
+        ],
+        lineTension: 0.3,
+        backgroundColor: ["rgba(54, 162, 235, 0.2)"],
+        borderColor: ["rgba(54, 162, 235, 1)"],
+      }
+    ]
+  };
 
   var ctx = $("#myChart");
   var myChart = new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: ["Principiante", "Amateur", "Profesional"],
-      datasets: [
-        {
-          label: "Golpe mas fuerte",
-          data: [maxHitPrincipiante, maxHitAmateur, maxHitProfesional],
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)"
-          ],
-          borderColor: [
-            "rgba(255,99,132,1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)"
-          ],
-          borderWidth: 1
-        }
-      ]
-    },
+    type: "radar",
+    data: maxHitData,
     options: {
       scales: {
         yAxes: [
@@ -224,27 +306,34 @@ function loadStatistics(dataPrincipiante, dataProfesional, dataAmateur) {
   var myChart2 = new Chart(ctx2, {
     type: "bar",
     data: {
-      labels: ["Principiante", "Amateur", "Profesional"],
+      labels: ["Media de golpes"],
       datasets: [
         {
-          label: "Golpe promedio",
-          data: [mediaHitPrincipiante, mediaHitAmateur, mediaHitProfesional],
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)"
-          ],
-          borderColor: [
-            "rgba(255,99,132,1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)"
-          ],
+          label: ["Principiante"],
+          data: [mediaHitPrincipiante],
+          backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+          borderColor: ["rgba(255,99,132,1)"],
+          borderWidth: 1
+        },
+        {
+          label: ["Amateur"],
+          data: [mediaHitAmateur],
+          backgroundColor: ["rgba(54, 162, 235, 0.2)"],
+          borderColor: ["rgba(54, 162, 235, 1)"],
+          borderWidth: 1
+        },
+        {
+          label: ["Profesional"],
+          data: [mediaHitProfesional],
+          backgroundColor: ["rgba(255, 206, 86, 0.2)"],
+          borderColor: ["rgba(255, 206, 86, 1)"],
+          borderWidth: 1
+        },
+        {
+          label: ["Libre"],
+          data: [mediaHitLibre],
+          backgroundColor: ["rgba(75, 192, 192, 0.2)"],
+          borderColor: ["rgba(75, 192, 192, 1)"],
           borderWidth: 1
         }
       ]
@@ -274,11 +363,15 @@ function loadStatistics(dataPrincipiante, dataProfesional, dataAmateur) {
   var myChart3 = new Chart(ctx3, {
     type: "doughnut",
     data: {
-      labels: ["Principiante", "Amateur", "Profesional"],
+      labels: ["Principiante", "Amateur", "Profesional", "Libre"],
       datasets: [
         {
-          label: "Golpes totales",
-          data: [totalHitsPrincipiante, totalHitsAmateur, totalHitsProfesional],
+          data: [
+            totalHitsPrincipiante,
+            totalHitsAmateur,
+            totalHitsProfesional,
+            totalHitsLibre
+          ],
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
             "rgba(54, 162, 235, 0.2)",
@@ -320,31 +413,38 @@ function loadStatistics(dataPrincipiante, dataProfesional, dataAmateur) {
     }
   });
 
-  ctx4 = $("#myChart4");
-  myChart4 = new Chart(ctx4, {
-    type: "radar",
+  var ctx4 = $("#myChart4");
+  var myChart4 = new Chart(ctx4, {
+    type: "bar",
     data: {
-      labels: ["Principiante", "Amateur", "Profesional"],
+      labels: ["Golpes por segundo"],
       datasets: [
         {
-          label: "# de golpes",
-          data: [12, 19, 13],
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)"
-          ],
-          borderColor: [
-            "rgba(255,99,132,1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)"
-          ],
+          label: ["Principiante"],
+          data: [mediaVelocidadPrincipiante],
+          backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+          borderColor: ["rgba(255,99,132,1)"],
+          borderWidth: 1
+        },
+        {
+          label: ["Amateur"],
+          data: [mediaVelocidadAmateur],
+          backgroundColor: ["rgba(54, 162, 235, 0.2)"],
+          borderColor: ["rgba(54, 162, 235, 1)"],
+          borderWidth: 1
+        },
+        {
+          label: ["Profesional"],
+          data: [mediaVelocidadProfesional],
+          backgroundColor: ["rgba(255, 206, 86, 0.2)"],
+          borderColor: ["rgba(255, 206, 86, 1)"],
+          borderWidth: 1
+        },
+        {
+          label: ["Libre"],
+          data: [mediaVelocidadLibre],
+          backgroundColor: ["rgba(75, 192, 192, 0.2)"],
+          borderColor: ["rgba(75, 192, 192, 1)"],
           borderWidth: 1
         }
       ]
@@ -370,6 +470,7 @@ function loadStatistics(dataPrincipiante, dataProfesional, dataAmateur) {
     }
   });
 }
+
 /**STOPWATCH */
 var status = 0; //0:stop 1:running
 var time = 0;
@@ -378,6 +479,7 @@ var sec = 0;
 var mSec;
 var retoTime;
 var challengeName;
+var dataFuerzaGolpe;
 
 function start(secs, retoChallengeName) {
   status = 1;
@@ -403,6 +505,7 @@ function timer() {
         var isDataEmpty = !Object.keys(data).length;
         if (!isDataEmpty) {
           dataSensor.data.push(JSON.parse(data));
+          dataFuerzaGolpe = JSON.parse(data);
           localStorage.setItem("dataSensors", JSON.stringify(dataSensor));
         }
       },
@@ -430,7 +533,7 @@ function timer() {
       timer();
     }, 10);
   }
-  if(status == 1 && sec > retoTime) {
+  if (status == 1 && sec > retoTime) {
     sendDataToServer();
     myApp.alert("Reto terminado", "SBB");
   }
@@ -488,8 +591,11 @@ function updateUI() {
         myApp.alert(e, "SBB");
       }
       try {
-          document.getElementById("labelFuerzaLibre").innerHTML =
-          dataSensor.data[dataSensor.data.length] + "Kg/f";
+        if(dataSensor.data.length){
+          document.getElementById("labelFuerzaLibre").innerHTML = dataFuerzaGolpe;
+        } else {
+          document.getElementById("labelFuerzaLibre").innerHTML = "000";
+        }
       } catch (e) {
         myApp.alert(e, "SBB");
       }
@@ -516,8 +622,12 @@ function updateUI() {
         myApp.alert(e, "SBB");
       }
       try {
-        document.getElementById("labelFuerza").innerHTML =
-        dataSensor.data.length ? dataSensor.data + "Kg/f" : "000 Kg/f ";
+        if(dataSensor.data.length){
+          document.getElementById("labelFuerza").innerHTML = dataFuerzaGolpe;
+        } else {
+          document.getElementById("labelFuerza").innerHTML = "000";
+        }
+
       } catch (e) {
         myApp.alert(e, "SBB");
       }
@@ -527,29 +637,29 @@ function updateUI() {
   }
 }
 
-function sendDataToServer () {
-  switch(userHistory[userHistory.length - 1]) {
+function sendDataToServer() {
+  switch (userHistory[userHistory.length - 1]) {
     case "retoVelocidad":
       try {
         serializeDataSensorVel(challengeName, "Velocidad");
       } catch (e) {
         myApp.alert(e, "SBB");
       }
-    break;
+      break;
     case "retoFuerza":
       try {
         serializeDataSensorVel(challengeName, "Fuerza");
       } catch (e) {
         myApp.alert(e, "SBB");
       }
-    break;
+      break;
     case "libre":
       try {
         serializeDataSensorVel("Libre", "Libre");
       } catch (e) {
         myApp.alert(e, "SBB");
       }
-    break;
+      break;
     default:
       break;
   }
@@ -580,11 +690,17 @@ function parseDataSensorVel(sensorData, challenge, tipoChallenge) {
       type: "GET",
       url: appServices.SBBWriteStatistics,
       data:
-        "user=" + Juser.result.idUser +
-        "&challengue=" + challenge +
-        "&tipoChallengue=" + tipoChallenge +
-        "&hits=[" + dataFinal + "]" +
-        "&time=" + retoTime,
+        "user=" +
+        Juser.result.idUser +
+        "&challengue=" +
+        challenge +
+        "&tipoChallengue=" +
+        tipoChallenge +
+        "&hits=[" +
+        dataFinal +
+        "]" +
+        "&time=" +
+        retoTime,
       contentType: "application/json",
       sync: false,
       dataType: "JSON",
