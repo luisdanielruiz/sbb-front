@@ -219,7 +219,7 @@ function loadStatistics(
     var mediaVelocidadAmateur = 0;
   }
 
-  if (dataFuerzaAmateur && dataFuerzaAmateur.length > 0) {
+  if (dataFuerzaProfesional && dataFuerzaProfesional.length > 0) {
     var maxHitProfesional = Math.max(...dataFuerzaProfesional);
     var minHitProfesional = Math.min(...dataFuerzaProfesional);
     var mediaHitProfesional = getMediafromArr(dataFuerzaProfesional);
